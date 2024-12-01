@@ -11,7 +11,7 @@
 |Week|Subject|Status|
 |---|---|---|
 |<p align="center">01</p>|&#x2611; Getting Started|Done|
-|<p align="center">02</p>|&#x2610; HTML - Structuring the Web|In Progress...|
+|<p align="center">02</p>|&#x2611; HTML - Structuring the Web|Done|
 |<p align="center">03</p>|&#x2610; CSS - Styling the Web||
 |<p align="center">04</p>|&#x2610; JavaScript - Dynamic Client-Side Scripting||
 |<p align="center">05</p>|&#x2610; CSS - Making Layouts||
