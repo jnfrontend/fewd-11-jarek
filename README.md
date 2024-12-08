@@ -12,7 +12,7 @@
 |---|---|---|
 |<p align="center">01</p>|&#x2611; Getting Started|Done|
 |<p align="center">02</p>|&#x2611; HTML - Structuring the Web|Done|
-|<p align="center">03</p>|&#x2610; CSS - Styling the Web||
+|<p align="center">03</p>|&#x2611; CSS - Styling the Web|Done|
 |<p align="center">04</p>|&#x2610; JavaScript - Dynamic Client-Side Scripting||
 |<p align="center">05</p>|&#x2610; CSS - Making Layouts||
 |<p align="center">06</p>|🎅 *24th December - Tuesday*|No Zoom session this week|
