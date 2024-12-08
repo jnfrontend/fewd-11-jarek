@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    letter-spacing: .4px;
+    color: #000099;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+
+a {
+    background-color: #CCCCCC;
+}
+
+hr {
+    border: 1px solid #000099;
+}
+
+footer {
+    display: block;
+    clear: both;
+    letter-spacing: .2px;
+}
+
+/*
+** Movie CSS
+*/
+
+header.movie-header {
+    font-size: 26px;
+}
+
+.movie-container h3 {
+    color: red;
+    font-size: 28px;
+    letter-spacing: -.3px;
+}
+
+.movie-container p {
+    line-height: 24px;
+}
+
+.movie-container .contactEmail a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+ul.cast-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+ul.cast-list li {
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+ul.cast-list li div.cast-avatar {
+    width: 96px;
+}
+
+ul.cast-list li div.cast-actor {
+    align-self: center;
+    margin-left: 15px;
+}
+
+ul.cast-list li span {
+    font-size: 13px;
+    color: #6767ff;
+}
+
+ul.cast-list li img {
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+footer.movie-footer {
+    padding: 20px 20px 15px 20px;
+}
+
+.movieLinkText {
+    margin: 0;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px 8px 0 0;
+    background-color: #000099;
+}
+
+.movieLinkText a {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.contactEmail {
+    margin: 0;
+    padding: 20px;
+    color: #00009a;
+    border-radius: 0 0 8px 8px;
+    background-color: transparent;
+    border: 2px solid #00009a;
+}
+
+.contactEmail a {
+    color: #00009a;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.contactEmail a:hover {
+    border-color: #000099;
+}
+
+.pad-lr-20 {
+    padding: 0 20px;
+}
