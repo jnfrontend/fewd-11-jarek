@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarek - Unit-3 Hands-On Exercise 9</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, Sans-Serif;
+            letter-spacing: .4px;
+            padding: 20px;
+        }
+        a,
+        a:active {
+            color: black;
+        }
+        header {
+            text-align: left;
+            background-color: #365D95;
+            border-radius: 8px;
+            min-height: 47px;
+            padding: 22px 10px;
+            color: white;
+        }
+        header h1 {
+            font-size: 26px;
+            padding: 0;
+            margin: 0;
+        }
+        header img {
+            float: left;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+        header h1 span {
+            display: inline-block;
+            border-bottom: 1px solid #4e6f9e;
+        }
+        header p {
+            color: #D0DCEE;
+            margin: 3px 0 0 0;
+            letter-spacing: .8px;
+            font-size: 11px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+        h2 {
+            font-weight: normal;
+            color: #55B05A;
+        }
+        h3 {
+            background-color: #55B05A;
+            border-radius: 4px;
+            padding: 5px 10px;
+            color: white;
+            margin: 0 0 8px 0;
+        }
+        article {
+            line-height: 24px;
+        }
+        .results-container p {
+            padding: 10px;
+            margin: 0;
+        }
+        .code-container {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            background-color: #ccc;
+            overflow: hidden;
+        }
+        code {
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin: 0;
+            padding: 0;
+            margin-left: -110px;
+            display: block;
+            color: #1e1e1e;
+        }
+        .stylesheetText {
+            padding: 5px 10px 0 10px;
+        }
+        .stylesheetText a {
+            color: #6f6f6f;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+        .stylesheetText a:hover {
+            color: black;
+            border-color: black;
+        }
+        .stylesheetText b,
+        .stylesheetText b ~ a {
+            display: inline-block;
+            transform: translateY(-9px);
+        }
+        hr {
+            border: 1px solid black;
+        }
+        footer {
+            padding: 15px 0 0 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exercise 9 -->
+    <!--
+        In this exercise, you will create two external style sheet files and a web page. 
+        You will experiment with linking the web page to the external style sheets 
+        and note how the display of the page is changed.
+    -->
+    <header>
+        <h1>
+            <a href="http://jigsaw.w3.org/css-validator" target="_blank">
+                <img src="/unit-3/img/w3c-logo.png" alt="">
+                <span>The W3C CSS Validation Service</span>
+            </a>
+        </h1>
+        <p>W3C CSS Validator results for TextArea (CSS level 3 + SVG)</p>
+    </header>
+    <main>
+        <div class="results-container">
+            <h2>W3C CSS Validator results for TextArea (CSS level 3 + SVG)</h2>
+            <h3>Congratulations! No Error Found.</h3>
+            <p>This document validates as <a href="">CSS level 3 + SVG !</a></p>
+        </div>
+
+        <hr>
+        <p class="stylesheetText">
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="Valid CSS!" />
+            </a>
+            <b>Stylesheet:</b> <a href="/unit-3/css/ex8.css" target="_blank">/unit-3/css/ex8.css</a>
+        </p>
+        <div class="code-container">
+            <code>
+                :root {
+                    --primaryDarkColor: black;
+                    --primaryLightColor: white;
+                    --primaryGreyColor: #cccccc;
+                    --newsColor: red;
+                }<br>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: var(--primaryDarkColor);
+                    letter-spacing: .4px;
+                    color: var(--primaryLightColor);
+                }<br>
+                header {
+                    padding: 20px 0;
+                }<br>
+                header h1 {
+                    font-family: 'Times New Roman', Times, serif;
+                    color: var(--primaryGreyColor);
+                }<br>
+                main ul {
+                    padding: 0;
+                    list-style: none;
+                    width: 600px;
+                }<br>
+                main ul h3 {
+                    font-weight: bold;
+                    font-size: 21px;
+                }<br>
+                main ul li.news p {
+                    font-style: italic;
+                    color: var(--newsColor);
+                }<br>
+                main ul li.news h3 > span {
+                    padding: 2px 6px;
+                    background-color: var(--newsColor);
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--primaryLightColor);
+                    display: inline-block;
+                    margin-left: 3px;
+                    transform: translateY(-4px);
+                }<br>
+                main ul li p {
+                    font-size: 16px;
+                    letter-spacing: .4px;
+                    line-height: 24px;
+                    padding-left: 20px;
+                }<br>
+                .w3c {
+                    margin: 0;
+                    color: var(--primaryLightColor);
+                    padding: 20px;
+                }<br>
+                .w3c a {
+                    color: var(--primaryDarkColor);
+                    font-weight: bold;
+                    padding: 5px 8px 5px 10px;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    background-color: var(--primaryGreyColor);
+                } <br>
+                .w3c a:hover {
+                    background-color: var(--primaryLightColor);
+                }<br>
+                .contactEmail {
+                    margin: 0;
+                    padding: 20px;
+                    color: var(--primaryLightColor);
+                }<br>
+                .contactEmail a {
+                    color: var(--primaryLightColor);
+                    padding-bottom: 5px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    border-bottom: 2px solid transparent;
+                }<br>
+                .contactEmail a:hover {<br>
+                    border-color: var(--primaryLightColor);
+                }<br>
+                footer {
+                    position: relative;
+                    padding: 20px;
+                }<br>
+                footer p {
+                    float: right;
+                    padding: 0;
+                    margin: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }<br>
+                .padd-lr-20 {
+                    padding: 0 20px;
+                }<br>
+                hr {<br>
+                    border: 1px solid var(--primaryLightColor);
+                }
+            </code>
+        </div>
+        <br>
+        <article>
+            <h2>Summary about the validation process</h2>
+            <p>
+                In my opinion using the CSS validator is straightforward, I didn't encounter any errors in my test. I would definitely  
+                recommend the validator to other students because it will help them to find errors, incorrect uses of CSS <br> 
+                or typos, what may cost a time to find by themself in a bigger projects.
+            </p>
+        </article>
+        <br>
+    </main>
+    <hr>
+    <footer>
+        <small>Copyright &copy; 2024 Jarek</small>
+    </footer>
+</body>
+</html>
