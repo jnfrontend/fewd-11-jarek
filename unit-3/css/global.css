@@ -1,0 +1,59 @@
+:root {
+    --darkNavy: #000066;
+}
+
+body { 
+    background-color: #CCCCCC;
+    color: #000066;
+    font-family: Arial,sans-serif; 
+}
+
+header { 
+    font-family: "Jaro", sans-serif;
+    background-color: #000066;
+    letter-spacing: .8px;
+    color: #FFFFFF;
+    padding: 20px 25px;
+    border-radius: 8px;
+    }
+
+nav {
+    color: #000066;
+    border-bottom: 1px solid #000066;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 5px;
+}
+
+nav ul li a,
+nav ul li a:active {
+    color: blue;
+}
+
+nav ul li a.activeLink {
+    text-decoration: none;
+    color: #000066;
+}
+
+footer { 
+    font-size: 80%;
+    font-style: italic; 
+}
+
+
+/* *** */
+.classOne {
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px;
+}
+
+.classTwo {
+    color: blue;
+}

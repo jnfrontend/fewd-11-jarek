@@ -1,0 +1,115 @@
+:root {
+    --primaryDarkColor: black;
+    --primaryLightColor: white;
+    --primaryGreyColor: #cccccc;
+    --newsColor: red;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primaryDarkColor);
+    letter-spacing: .4px;
+    color: var(--primaryLightColor);
+}
+
+header {
+    padding: 20px 0;
+}
+
+header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--primaryGreyColor);
+}
+
+main ul {
+    padding: 0;
+    list-style: none;
+    width: 600px;
+}
+
+main ul h3 {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+main ul li.news p {
+    font-style: italic;
+    color: var(--newsColor);
+}
+
+main ul li.news h3 > span {
+    padding: 2px 6px;
+    background-color: var(--newsColor);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--primaryLightColor);
+    display: inline-block;
+    margin-left: 3px;
+    transform: translateY(-4px);
+}
+
+main ul li p {
+    font-size: 16px;
+    letter-spacing: .4px;
+    line-height: 24px;
+    padding-left: 20px;
+}
+
+.w3c {
+    margin: 0;
+    color: var(--primaryLightColor);
+    padding: 20px;
+}
+
+.w3c a {
+    color: var(--primaryDarkColor);
+    font-weight: bold;
+    padding: 5px 8px 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: var(--primaryGreyColor);
+}
+.w3c a:hover {
+    background-color: var(--primaryLightColor);
+}
+
+.contactEmail {
+    margin: 0;
+    padding: 20px;
+    color: var(--primaryLightColor);
+}
+
+.contactEmail a {
+    color: var(--primaryLightColor);
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.contactEmail a:hover {
+    border-color: var(--primaryLightColor);
+}
+
+footer {
+    position: relative;
+    padding: 20px;
+}
+
+footer p {
+    float: right;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.padd-lr-20 {
+    padding: 0 20px;
+}
+
+hr {
+    border: 1px solid var(--primaryLightColor);
+}

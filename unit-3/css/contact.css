@@ -1,0 +1,31 @@
+@import url("global.css");
+
+form {
+    width: 205px;
+    margin-top: 20px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+form label,
+form input {
+    width: -webkit-fill-available;
+}
+
+form label {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: .4px;
+}
+
+form input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 150px;
+}
