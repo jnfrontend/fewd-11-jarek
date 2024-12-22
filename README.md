@@ -8,15 +8,15 @@
 
 <br>
 
-|Week|Subject|Status|
+|Week|Subject|<p align="center">Status</p>|
 |---|---|---|
-|<p align="center">01</p>|&#x2611; Getting Started|Done|
-|<p align="center">02</p>|&#x2611; HTML - Structuring the Web|Done|
-|<p align="center">03</p>|&#x2611; CSS - Styling the Web|Done|
-|<p align="center">04</p>|&#x2610; JavaScript - Dynamic Client-Side Scripting||
-|<p align="center">05</p>|&#x2610; CSS - Making Layouts||
-|<p align="center">06</p>|🎅 *24th December - Tuesday*|No Zoom session this week|
-|<p align="center">07</p>|🍾 *31th December - Tuesday*|No Zoom session this week|
+|<p align="center">01</p>|&#x2611; Getting Started|<p align="center">Done</p>|
+|<p align="center">02</p>|&#x2611; HTML - Structuring the Web|<p align="center">Done</p>|
+|<p align="center">03</p>|&#x2611; CSS - Styling the Web|<p align="center">Done</p>|
+|<p align="center">04</p>|&#x2610; JavaScript - Dynamic Client-Side Scripting|<p align="center">Done</p>|
+|<p align="center">05</p>|&#x2610; CSS - Making Layouts|<p align="center">Done</p>|
+|<p align="center">06</p>|🎅 *24th December - Tuesday*|<p align="center">No session this week</p>|
+|<p align="center">07</p>|🍾 *31th December - Tuesday*|<p align="center">No session this week</p>|
 |<p align="center">08</p>|&#x2610; Introduction to Websites / Web Applications||
 |<p align="center">09</p>|&#x2610; CSS - Advanced||
 |<p align="center">10</p>|&#x2610; Project Update / Review||
