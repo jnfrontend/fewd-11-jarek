@@ -8,7 +8,7 @@
 
 <br>
 
-|Week|Subject|<p align="center">Status</p>|
+|Week|Subject|Status|
 |---|---|---|
 |<p align="center">01</p>|&#x2611; Getting Started|<p align="center">Done</p>|
 |<p align="center">02</p>|&#x2611; HTML - Structuring the Web|<p align="center">Done</p>|
