@@ -1,0 +1,190 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video {
+  max-width: 100%;
+}
+
+/* Fonts */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main */
+body {
+  position: relative;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  padding: 0 20px;
+  background-color: white;
+}
+
+header h1,
+.section_title {
+  background: white;
+  font-size: 48px;
+  letter-spacing: 0.8px;
+  color: #212529;
+}
+div#ranking_tables h2 {
+  letter-spacing: 0.8px;
+}
+
+/* Header and Navigation */
+header h1 {
+  padding: 50px 20px 0px 20px;
+}
+
+nav {
+  height: 35px;
+  background-color: #235384;
+}
+nav ul {
+  display: inline-block;
+  width: 100%;
+}
+nav ul li {
+  text-align: center;
+}
+
+nav ul li:nth-child(2) {
+  border-right: 1px solid #567494;
+  border-left: 1px solid #567494;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  line-height: 35px;
+}
+
+/* Main Banner */
+section#banner {
+  position: relative;
+  height: 550px;
+  background-image: url("/unit-5/dc-comics/images/DC.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Super Heroes */
+div#superheroes {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+div#superheroes h2,
+div#ranking_tables h2 {
+  text-align: center;
+  font-weight: 500;
+}
+
+div#ranking_tables h2 {
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+/* Super Heroes Cards */
+div#superheroes .card_container .card_hero {
+  overflow: hidden;
+  background-color: #235384;
+}
+
+div#superheroes .card_container .card_hero .card_hero_img {
+  height: 610px;
+  margin: 0 auto;
+  display: block;
+}
+
+div#superheroes .card_container .card_hero .card_hero_name {
+  color: white;
+}
+
+div#superheroes .card_container .card_content p {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+/* Ranking Tables */
+div#ranking_tables table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid #d4d4d4;
+  overflow: hidden;
+}
+
+div#ranking_tables table tr {
+  background-color: white;
+}
+
+div#ranking_tables table tr th {
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+div#ranking_tables table th,
+div#ranking_tables table td {
+  padding: 10px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+div#ranking_tables table tr:last-child td {
+  border-bottom: none;
+}
+
+div#ranking_tables table tr {
+  background: #eeeeee;
+}
+
+div#ranking_tables table tr:nth-of-type(odd) {
+  background: white;
+}
+
+/* Footer */
+footer {
+  padding: 1% 0.5%;
+  text-align: center;
+  background-color: #235384;
+  color: white;
+}
+
+footer p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+footer p.large {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+/* Other */
+.txt-l {
+  text-align: left;
+}
+.txt-c {
+  text-align: center;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}

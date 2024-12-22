@@ -1,0 +1,46 @@
+/* 
+** Stylesheet: CSS Grid Layout
+*/
+
+/* Navigation */
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+nav ul li a {
+  display: grid;
+}
+
+/* Super Heroes and Ranking Tables */
+div#superheroes,
+div#ranking_tables {
+  display: grid;
+  gap: 20px;
+}
+
+div#superheroes {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+div#ranking_tables {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  div#superheroes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  div#ranking_tables {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  div#superheroes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

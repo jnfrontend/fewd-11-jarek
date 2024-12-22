@@ -1,0 +1,57 @@
+/*
+** Stylesheet: FlexBox Layout
+*/
+
+/* Navigation */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  width: 100%;
+}
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Super Heroes and Ranking Tables */
+div#superheroes,
+div#ranking_tables {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+div#superheroes .card_container,
+div#ranking_tables .table_container {
+  flex-grow: 1;
+  margin: 10px;
+}
+
+div#superheroes .card_container {
+    width: calc(100% * (1 / 4) - 20px);
+}
+
+div#ranking_tables .table_container {
+  width: calc(100% * (1 / 2) - 20px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  div#superheroes .card_container {
+    width: calc(100% * (1 / 2) - 20px);
+  }
+
+  div#ranking_tables .table_container {
+    width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  div#superheroes .card_container {
+    width: calc(100% - 20px);
+  }
+}
