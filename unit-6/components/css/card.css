@@ -1,0 +1,147 @@
+/*
+** Super Hero Card Component
+*/
+
+.card_container {
+  box-shadow: 0px 6px 10px 0 rgba(0, 0, 0, 0.05);
+  width: calc(100% * (1 / 4) - 20px);
+  position: relative;
+  border-radius: 8px;
+  background-color: #f0f2f3;
+  transition: 0.25s ease-out 0.05s;
+  flex-grow: 1;
+  margin: 10px;
+  padding: 0;
+  z-index: 0;
+}
+
+.card_container:hover, 
+.card_container:focus {
+  background: linear-gradient(0deg, rgba(0, 116, 232, 1) 35%, rgba(240, 242, 243, 1) 100%);
+  box-shadow: 0 0 0 3px rgb(0, 116, 232), 0px 10px 50px 10px rgb(0, 116, 232, 0.1);
+  transform: translateY(-5px);
+  transition: 0.25s ease-in 0.15s;
+}
+
+.card_container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.card_container .card_hero {
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.card_container .card_hero .card_hero_img {
+  filter: grayscale(0.2);
+  border-radius: 8px 8px 0 0;
+  -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
+  mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+  transition: all 0s ease 0.05s;
+}
+
+.card_container:hover .card_hero .card_hero_img {
+  animation: animate-hero 1.2s alternate ease-in-out infinite 0.42s;
+  transition: all 1.35s ease 0.15s;
+  -webkit-mask-position: -120%;
+  mask-position: -120%;
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.card_container .card_hero .card_hero_name {
+  transition: color .25s ease 0.1s;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: white;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  padding: 20px 30px;
+}
+
+.card_container .card_content {
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  display: block;
+  padding-bottom: 25px;
+  min-height: 110px;
+}
+
+.card_container a,
+.card_container a:focus,
+.card_container a:visited,
+.card_container a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card_container .card_content p {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  line-height: 18px;
+  padding: 0 20px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: .5;
+  transition: 0.25s ease-out 0.05s;
+}
+
+.card_container .card_content span {
+  margin-top: 24px;
+  display: block;
+  font-weight: 700;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 24px;
+  letter-spacing: 0;
+}
+
+.card_container:hover .card_hero_name,
+.card_container:hover .card_content span {
+  color: rgb(0, 116, 232);
+}
+
+.card_container:hover .card_content p {
+  opacity: 1;
+  transition: 0.25s ease-in 0.15s;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .card_container {
+    width: calc(100% * (1 / 2) - 20px);
+  }
+}
+@media (max-width: 768px) {
+  .card_container {
+    width: calc(100% - 20px);
+  }
+  .card_container .card_content {
+    min-height: auto;
+  }
+}
+
+@keyframes animate-hero {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0.5em);
+  }
+}
