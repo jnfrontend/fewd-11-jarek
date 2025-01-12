@@ -1,0 +1,84 @@
+/*
+** Main Stylesheet
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+  color: #212529;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  background-color: white;
+  letter-spacing: 0.4px;
+  color: #212529;
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 40px;
+}
+
+section {
+  position: relative;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div#superheroes h2 {
+  text-align: center;
+}
+
+div#superheroes,
+section#superhero-bio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+section#superhero-bio {
+  flex-direction: column;
+}
+
+.back-btn {
+  transition: 0.25s ease-in 0.15s;
+  background-color: rgb(0, 116, 232);
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin: 15px auto 0 auto;
+  color: white;
+  padding: 14px 21px;
+  border-radius: 8px;
+}
+
+.back-btn:hover {
+  opacity: .9;
+}

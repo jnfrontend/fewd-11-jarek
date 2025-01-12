@@ -1,0 +1,48 @@
+
+/*
+** Navigation Menu Component
+*/
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  
+  nav ul,
+  nav ul li {
+    background-color: #235384;
+    text-align: center;
+  }
+  
+  nav ul li:nth-child(2) {
+    border-right: 1px solid #567494;
+    border-left: 1px solid #567494;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  nav ul li a:hover {
+    background-color: #006a98;
+  }
