@@ -1,0 +1,154 @@
+body {
+  font-size: 100%;
+  background-color: #363636;
+}
+
+p {
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  letter-spacing: 1.25px;
+  opacity: 0.25;
+  font-family: "Lora", serif;
+  text-shadow: 0px 3px 4px rgb(6 24 38 / 31%);
+}
+
+p b {
+  font-size: 38px;
+  letter-spacing: 0.8px;
+}
+
+h3 {
+  font-size: 220px;
+}
+
+main {
+  padding: 40px 50px 0 50px;
+}
+
+.container {
+  display: block;
+  text-align: center;
+  border-radius: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s ease 0s;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  max-height: 790px;
+  margin: 0 auto;
+  cursor: pointer;
+  box-shadow: 0px 9px 30px -10px #010101;
+  border: 2px solid transparent;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.pexels.com/photos/388415/pexels-photo-388415.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  animation: animBackgroundImg 90s linear infinite;
+  transition: all 0.5s ease 0s;
+  filter: blur(0);
+}
+
+.container:hover .image {
+  filter: blur(4px) !important;
+  transition: all 0.85s ease 0.3s;
+}
+
+.animate-character {
+  color: #fff;
+  filter: blur(3.5px);
+  background-image: url("https://images.pexels.com/photos/388415/pexels-photo-388415.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  text-transform: uppercase;
+  /* background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    ); */
+  /* background-size: auto auto;  */
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animTextclip 45s linear infinite;
+  display: inline-block;
+  letter-spacing: 12px;
+  transform: translateY(-70px);
+  transition: all 0.5s ease;
+  color: transparent;
+}
+
+.container:hover .animate-character {
+  transition: all 0.5s ease 0.35s;
+  filter: blur(0);
+  text-shadow: 6px 0px 2px white, -7px -1px 10px rgb(22 59 87 / 32%);
+}
+
+@media screen and (min-width: 1360px) {
+  .image {
+    animation: animBackgroundImg 45s linear infinite;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .image {
+    animation: animBackgroundImg 25s linear infinite;
+  }
+}
+
+@media screen and (max-width: 1410px) {
+  h3 {
+    font-size: 15vw;
+  }
+}
+
+@media screen and (max-width: 1359px) {
+  h3 {
+    font-size: 18vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .container .animate-character,
+  body .container:hover .animate-character {
+    filter: blur(0);
+    letter-spacing: 0.6px;
+    transform: translateY(-50px);
+    text-shadow: 3px 0px 2px white, -7px -1px 10px transparent;
+  }
+}
+
+@keyframes animTextclip {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes animBackgroundImg {
+  0% {
+    background-position: 0% 0%;
+    transform: scale(1);
+  }
+  50% {
+    background-position: 100% 100%;
+    transform: scale(1.25);
+  }
+  100% {
+    background-position: 0% 0%;
+    transform: scale(1);
+  }
+}
