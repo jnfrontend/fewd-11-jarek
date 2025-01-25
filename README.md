@@ -16,10 +16,10 @@
 |<p align="center">04</p>|&#x2611; JavaScript - Dynamic Client-Side Scripting|<p align="center">Done</p>|
 |<p align="center">05</p>|&#x2611; CSS - Making Layouts|<p align="center">Done</p>|
 |<p align="center">06</p>|🎅 *24th December - Tuesday*|<p align="center">No session this week</p>|
-|<p align="center">07</p>|🍾 *31th December - Tuesday*|<p align="center">No session this week</p>|
-|<p align="center">08</p>|&#x2610; Introduction to Websites / Web Applications||
-|<p align="center">09</p>|&#x2610; CSS - Advanced||
-|<p align="center">10</p>|&#x2610; Project Update / Review||
+|<p align="center">07</p>|🍾 *31st December - Tuesday*|<p align="center">No session this week</p>|
+|<p align="center">08</p>|&#x2610; Introduction to Websites / Web Applications|<p align="center">Done</p>|
+|<p align="center">09</p>|&#x2610; CSS - Advanced|<p align="center">Done</p>|
+|<p align="center">10</p>|&#x2610; Project Update / Review|<p align="center">Done</p>|
 |<p align="center">11</p>|&#x2610; JavaScript - Modifying the Document Object Model (DOM)||
 |<p align="center">12</p>|&#x2610; Dynamic HTML||
 |<p align="center">13</p>|&#x2610; Web Forms - Working with User Data||
@@ -38,11 +38,11 @@
 |<p align="center">22</p>|&#x2610; Assessment ⭐⭐⭐⭐⭐||
 
 > [!IMPORTANT]
-> **Assessment Due:** *Tuesday, 22 April 2025, 11:59 PM*
+> **Assessment Due:** *Tuesday, 22nd April 2025, 11:59 PM*
 
 > [!NOTE]
 > **No Zoom session** <br> 
 > - **Christmas Eve:**  *Tuesday, 24th December 2024* <br>
-> - **New Year's Eve:** *Tuesday, 31th December 2024*
+> - **New Year's Eve:** *Tuesday, 31st December 2024*
 
 > © November 2024 JN, all rights reserved.
