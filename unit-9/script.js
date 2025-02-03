@@ -98,14 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(event.currentTarget);
     console.log(event); // [!] Display object with properties to use
   }
-  box2.addEventListener(
-    "click",
-    function (e) {
+  box2.addEventListener("click", function (e) {
       e.stopPropagation();
       console.log("Second box clicked");
-    },
-    false
-  ); // or false = when stopPropagation() is "true" then any other click event on box2 will be ignored
+    },false); // or false = when stopPropagation() is "true" then any other click event on box2 will be ignored
 
   box2.addEventListener("click", whenItsClicked);
 
