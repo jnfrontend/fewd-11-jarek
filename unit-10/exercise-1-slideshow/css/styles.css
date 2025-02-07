@@ -1,0 +1,117 @@
+* {box-sizing: border-box}
+      
+body {
+  font-family: Verdana, sans-serif; 
+  background-color: rgb(58, 58, 58);
+  margin:0;
+  margin-top: 100px;
+}
+
+.slide {display: none}
+
+img {
+  vertical-align: middle;
+  width:100%;
+}
+.carousel-container {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+
+}
+
+.navigation-buttons .previous, 
+.navigation-buttons .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.navigation-buttons .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.navigation-buttons .nav-btn {
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navigation .nav-btn:hover {
+  background: white;
+}
+
+.slider-carousel {
+  margin-top: 20px;
+  transition: all 0.3s ease;
+
+}
+.slider-carousel img {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.slide {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  padding: 20px; 
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.5);
+}
+.image-text h3,
+.image-text p {
+  margin: 5px;
+}
+/* The dots/bullets/indicators */
+.navigation-dot-container {
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  width: 100%; 
+}
+
+.navigation-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .navigation-dot:hover {
+  background-color: #717171;
+}
