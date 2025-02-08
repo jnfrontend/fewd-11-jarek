@@ -1,15 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit 10 Exercise 2 - Slideshow (Swiper)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body>
     <header>
-        <h1>Unit 10 Exercise 2 - Slideshow (Swiper)</h1>
+      <h1>Unit 10 Exercise 2 - Slideshow (Swiper)</h1>
     </header>
+    <hr />
+    <main>
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.pixabay.com/photo/2022/11/29/11/31/robin-7624340_1280.jpg"
+              alt="nature 1"
+            />
+            <div class="swiper-slide-content">
+              <div class="swiper-slide-title">
+                <h3>Slide 1</h3>
+                <p>This is a sample slide.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.pixabay.com/photo/2015/11/16/16/28/bird-1045954_1280.jpg"
+              alt="nature 2"
+            />
+            <div class="swiper-slide-content">
+              <div class="swiper-slide-title">
+                <h3>Slide 2</h3>
+                <p>This is a sample slide.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.pixabay.com/photo/2021/12/11/12/15/bird-6862640_1280.jpg"
+              alt="nature 3"
+            />
+            <div class="swiper-slide-content">
+              <div class="swiper-slide-title">
+                <h3>Slide 3</h3>
+                <p>This is a sample slide.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/08/11/23/48/mountains-1587287_1280.jpg"
+              alt="nature 4"
+            />
+            <div class="swiper-slide-content">
+              <div class="swiper-slide-title">
+                <h3>Slide 4</h3>
+                <p>This is a sample slide.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/09/19/22/46/lake-1681485_1280.jpg"
+              alt="nature 5"
+            />
+            <div class="swiper-slide-content">
+              <div class="swiper-slide-title">
+                <h3>Slide 5</h3>
+                <p>This is a sample slide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </main>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
