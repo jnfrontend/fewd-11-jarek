@@ -17,7 +17,6 @@ img {
   height: auto;
   position: relative;
   margin: 0 auto;
-
 }
 
 .navigation-buttons .previous, 
@@ -66,18 +65,24 @@ img {
 }
 .slider-carousel img {
   width: 100%;
+  position: absolute;
   transition: all 0.3s ease;
 }
 
 .slide {
-  display: none;
   aspect-ratio: 2.5;
   width: 100%;
   display: none;
   overflow: hidden;
+  position: relative;
   justify-content: center;
   align-items: center;
 }
+
+.slide:nth-of-type(4) img {
+  bottom: 0;
+}
+
 
 .main {
   display: block;
