@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 9 - JavaScript - Modifying DOM</title>
+    <link rel="stylesheet" href="/unit-9/style.css" />
+    <script src="/unit-9/script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h3>UNIT 9 Exercises</h3>
+      <h1>JavaScript - Modifying the Document Object Model (DOM)</h1>
+      <hr />
+      <br />
+
+      <p>1. Change/edit box elements</p>
+      <div class="container" id="container">
+        <div class="box" id="box1">Box 1</div>
+        <div class="box" id="box2">Box 2</div>
+        <div class="box" id="box3">Box 3</div>
+        <div class="box" id="box4">Box 4</div>
+        <div class="box" id="box5">Box 5</div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <section class="forms-container">
+        <p>
+          2. Enter text in the form field and click button to display the value
+        </p>
+        <br />
+
+        <!-- 1D. a -->
+        <b>Form 1</b>
+        <form id="form1">
+          <input
+            type="text"
+            onkeypress="console.log(event.currentTarget.value)"
+            placeholder="Type some text here..."
+            id="input1"
+            class="input"
+          />
+          <button type="submit" id="button1">Sign up</button>
+        </form>
+        <div id="form-output">
+          <!-- Form output will be displayed here -->
+          Output: <span></span>
+        </div>
+        <br />
+        <br />
+
+        <b>Form 2</b>
+        <form id="form2">
+          <input
+            type="text"
+            placeholder="Type some text here..."
+            id="input2"
+            class="input"
+          />
+          <button type="submit" id="button2">Sign in</button>
+        </form>
+        <br />
+        <br />
+
+        <!-- 1D. b -->
+        <b>Form 3</b><br />
+        <small class="important">
+          <i
+            >This form doesn't have an input, so when you click button it should
+            display error message in console.</i
+          >
+        </small>
+        <form id="form3">
+          <!-- <input type="text" placeholder="Type some text here..." id="input3" class="input" /> -->
+          <button type="button" id="button3">Button</button>
+        </form>
+        <br />
+      </section>
+      <br />
+      <hr />
+      <br />
+
+      <p>3. Change images by using loops</p>
+      <br />
+      <div id="output">
+        <img id="random_img" src="/unit-9/images/img-2.jpg" alt="Image 1" />
+      </div>
+    </main>
+  </body>
+</html>
