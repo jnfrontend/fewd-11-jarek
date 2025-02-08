@@ -14,6 +14,8 @@
                             <th>Date</th>
                             <th>Name (in Irish)</th>
                             <th>Name</th>
+                            <th>Country Code</th>
+                            <th>Types</th>
                         </tr>
                     </thead>
                     <tbody>`;
@@ -23,9 +25,11 @@
                 <td>${ hols[i].date }</td>
                 <td>${ hols[i].localName }</td>
                 <td>${ hols[i].name }</td>
+                <td>${ hols[i].countryCode }</td>
+                <td>${ hols[i].types }</td>
             </tr>`;
         }
-        outputHtml += `</tbody>
+        outputHtml += `     </tbody>
             </table>
         </div>`;
 
