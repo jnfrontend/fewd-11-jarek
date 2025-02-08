@@ -1,15 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A Responsive Image Gallery with VenoBox using HTML CSS & JavaScript"
+    />
+    <meta
+      name="keywords"
+      content="Create Image Gallery with VenoBox,CSS Gallery,HTML and CSS,HTML CSS JavaScript,Image CSS Image Gallery,Image Gallery,Image Gallery with VenoBox"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit 10 Exercise 4 - VenoBox Lightbox</title>
+    <link rel="stylesheet" href="plugin/VenoBox/venobox.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Unit 10 Exercise 4 - VenoBox Lightbox</h1>
+      <h1>Unit 10 Exercise 4 - VenoBox Lightbox</h1>
     </header>
+    <hr />
+    <section class="lightbox-container">
+      <div class="image-gallery">
+        <header>Masonry Image Gallery</header>
+        <div class="image-container">
+          <div class="image-box">
+            <!-- Image 1 -->
+            <a
+              class="image-box-link"
+              href="images/img1.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img1.jpg" alt="image 1" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 2 -->
+            <a
+              class="image-box-link"
+              href="images/img2.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img2.jpg" alt="image 2" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 3 -->
+            <a
+              class="image-box-link"
+              href="images/img3.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img3.jpg" alt="image 3" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 4 -->
+            <a
+              class="image-box-link"
+              href="images/img4.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img4.jpg" alt="image 4" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 5 -->
+            <a
+              class="image-box-link"
+              href="images/img5.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img5.jpg" alt="image 5" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 6 -->
+            <a
+              class="image-box-link"
+              href="images/img6.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img6.jpg" alt="image 6" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 7 -->
+            <a
+              class="image-box-link"
+              href="images/img7.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img7.jpg" alt="image 2" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 8 -->
+            <a
+              class="image-box-link"
+              href="images/img8.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img8.jpg" alt="image 8" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 9 -->
+            <a
+              class="image-box-link"
+              href="images/img9.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img9.jpg" alt="image 9" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 10 -->
+            <a
+              class="image-box-link"
+              href="images/img10.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img10.jpg" alt="image 10" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 11 -->
+            <a
+              class="image-box-link"
+              href="images/img11.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img11.jpg" alt="image 11" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 12 -->
+            <a
+              class="image-box-link"
+              href="images/img12.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img12.jpg" alt="image 12" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 13 -->
+            <a
+              class="image-box-link"
+              href="images/img13.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img13.jpg" alt="image 13" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 14 -->
+            <a
+              class="image-box-link"
+              href="images/img14.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img14.jpg" alt="image 14" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="image-box">
+            <!-- Image 15 -->
+            <a
+              class="image-box-link"
+              href="images/img15.jpg"
+              data-gall="venoBoxGallery"
+              data-maxwidth="600px"
+            >
+              <img class="gImg" src="images/img15.jpg" alt="image 15" />
+            </a>
+            <div class="logo_icons">
+              <a href="#">
+                <img class="logoImg" src="images/logo.png" alt="" />
+                <div class="text_content">
+                  <span class="name">CodingLab</span>
+                  <span class="followers">50k followers</span>
+                </div>
+              </a>
+              <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="plugin/VenoBox/venobox.min.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
