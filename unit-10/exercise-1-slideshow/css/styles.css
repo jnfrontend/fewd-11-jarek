@@ -7,15 +7,14 @@ body {
   margin-top: 100px;
 }
 
-.slide {display: none}
-
 img {
   vertical-align: middle;
   width:100%;
 }
+
 .carousel-container {
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   position: relative;
   margin: 0 auto;
 
@@ -71,8 +70,13 @@ img {
 }
 
 .slide {
-  position: absolute;
   display: none;
+  aspect-ratio: 2.5;
+  width: 100%;
+  display: none;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -114,4 +118,20 @@ img {
 }
 .active, .navigation-dot:hover {
   background-color: #717171;
+}
+
+@media screen and (max-width: 425px)  {
+  .slide {
+    aspect-ratio: unset;
+    flex-direction: column;
+  }
+  .image-text {
+    position: unset;
+    width: 100%;
+    padding: 10px;
+    font-size: unset;
+  }
+  .navigation-dot-container {
+    display: none;
+  }
 }
