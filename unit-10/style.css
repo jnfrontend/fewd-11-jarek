@@ -1,0 +1,35 @@
+ul {
+    min-height: 250px;
+    position: relative;
+    background-color: #ebebeb;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    list-style: none;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+#dynamic_items button {
+    font-size: 16px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    background-color: #2276dd;
+    border: #2276dd;
+    margin-right: 10px;
+    color: white;
+}
+
+#dynamic_items button:hover {
+    background-color: hsl(213, 73%, 40%);
+}
