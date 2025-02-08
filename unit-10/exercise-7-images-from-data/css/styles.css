@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#search,
+#content,
+footer > section  {
+    max-width: 1440px;
+    margin: auto;
+    padding: 10px;
+}
+header {
+    background: url(https://cdn.pixabay.com/index/2020/04/02/19-05-53-828_1920x430.jpg) no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+}
+footer {
+    background-color: lightgray;
+    min-height: 100px;
+}
+.search-container {
+    text-align: center;
+    padding: 20px 0;
+}
+#search {
+    padding: 0;
+}
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.image {
+    position: relative;
+}
+.image > a {
+    display: block;
+}
+.image img {
+    max-width: 100%;
+}
+.image-info {
+    display: none;
+}
+.image:hover .image-info {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(255,255,255,0) );
+    min-height: 30%;
+    width: 100%;
+}
+.image:hover .image-info > div {
+    display: inline-block;
+    padding: 10px;
+}
+.image:hover .image-info a {
+    color: #fff;
+}
+.image-info span {
+    display: inline;
+    padding: 0 5px;
+}
+.image-info a {
+    display: inline;
+    padding-right: 1em;
+    text-decoration: none;
+}
+.right {
+    float: right;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .image-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 424px) {
+    .image-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
