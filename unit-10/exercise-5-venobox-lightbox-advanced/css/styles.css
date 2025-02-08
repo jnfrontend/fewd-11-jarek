@@ -229,10 +229,13 @@ section .image-gallery .text_content .followers {
     bottom: 25px;
 }
 
+/* Fix to lightbox trigger when the image is not wrapped in <a> tag */
+/* 
 .image-box-link {
     position: absolute;
     height: 80%;
     width: 100%;
     top: 0;
     left: 0;
-  }
+  } 
+*/
