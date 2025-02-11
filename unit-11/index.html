@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 11 - Web Forms - Working with User Data</title>
+    <link rel="stylesheet" type="text/css" href="/unit-11/styles.css" />
+    <script src="/unit-11/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h3>UNIT 11</h3>
+      <h1>Web Forms - Working with User Data</h1>
+    </header>
+    <hr />
+
+    <!-- POST method: (99%) Mostly use this method and avoid GET -->
+    <!-- GET method: Is less secure as data is exposed in the URL - and the length of a URL is limited -->
+    <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" title="This is an input for name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter your password" required />
+
+        <select name="selectCar" id="selectCar">
+            <option value="">Select Car</option>
+            <option value="male" selected>Mercedes</option>
+            <option value="female">Audi</option>
+            <option value="other">BMW</option>
+        </select>
+
+        <textarea name="inputTextField" cols="15" rows="5" maxlength="50" id="message-box"></textarea>
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Cancel" />
+      </form>
+    </form>
+  </body>
+</html>
