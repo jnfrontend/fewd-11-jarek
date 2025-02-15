@@ -12,6 +12,53 @@
       <h1>Exercise 4 - Simple TODO List</h1>
     </header>
     <hr />
+    <section class="component-simple-to-do-list">
+      <div class="container component-simple-to-do-list__items">
+        <table>
+          <thead>
+            <th>Title</th><th>Description</th><th>Priority</th>
+          </thead>
+          <tbody id="to-do-items-container">
+          </tbody>
+        </table>
+      </div>
+      <div class="container component-simple-to-do-list__form">
+        <form id="to-do-list-form">
+          <div class="row">
+            <div class="col-25">
+              <label for="title">Title</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="title" name="title" placeholder="Enter title of item...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="description">Description...</label>
+            </div>
+            <div class="col-75">
+              <textarea name="description" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="priority">Priority</label>
+            </div>
+            <div class="col-75">
+              <select id="priority" name="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <input id="reset" type="reset" value="Clear" class="btn"></input>   
+            <input id="submit" type="submit" value="Submit" class="btn">
+          </div>
+          </form>
+      </div>
+    </section>
     <script src="js/main.js"></script>
   </body>
 </html>
