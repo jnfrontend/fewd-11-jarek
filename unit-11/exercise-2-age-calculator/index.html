@@ -11,7 +11,17 @@
     <h3>Unit 11</h3>
     <h1>Exercise 2 - Age Calculator</h1>
   </header>
-  <hr>
+  <section class="component-age-calculator">
+    <div class="container">
+      <h2>Age Calculator</h2>
+      <form class="age-calculator-form">
+        <label for="fact">When was your birthday?</label>
+        <input type="date" id="birthday" name="birthday" min="1900-01-01" max="2024-01-02" required>
+        <button class="submit">Submit</button>
+      </form>
+    </div>
+    <div class="age-output-container"></div>    
+  </section>
   <script src="js/main.js"></script>
 </body>
 </html>
