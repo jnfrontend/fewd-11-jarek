@@ -40,8 +40,38 @@
       const d = d2 - d1;
       const m = m2 - m1;
       const y = y2 - y1;
+
+      let years = "";
+      let months = "";
+      let days = "";
+      let andText = "";
+
+
+      if (y > 0) {
+        years = `${y} Years, `;
+        if (y === 1) { 
+            years = years.replace("s", "");
+        }
+      }
+      if (m > 0) {
+        months = `${m} Months`;
+        if (m === 1) { 
+            months = months.substring(0, months.length - 1);
+        }
+      }
+      if (d > 0) {
+        days = `${d} Days`;
+        andText = '';
+        if (d === 1) { 
+            days = days.substring(0, days.length - 1);
+        }
+      }
+      if (y > 0 || m > 0 && d > 0) {
+        andText = ' and ';
+      }
+      console.log(y);
   
-      outputHtml = `<p>Your Age is ${y} Years, ${m} Months and ${d} Days</p>`;
+      outputHtml = "<p>Your Age is: <b>" + years + months + "</b>" + andText + "<b>" + days + "</b></p>";
   
       // output 
       outputContainer.innerHTML = outputHtml;

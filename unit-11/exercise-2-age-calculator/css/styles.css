@@ -29,7 +29,7 @@ body {
     font-family: sans-serif;
     font-weight: bold;
     margin-top: 0px;
-    box-shadow: 0px 2px #bababa;
+    box-shadow: 0px 1px #bababa;
     border-radius: 8px 8px 0 0;
     padding: 10px 0;
     background: white;
@@ -64,7 +64,7 @@ body {
     border-radius: 2px;
     background-color: #0761b6;
     color: #ffffff;
-    padding: 14px 16px;
+    padding: 16px;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
