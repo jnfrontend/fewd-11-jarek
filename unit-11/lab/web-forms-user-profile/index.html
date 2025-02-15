@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 11 - User Profile</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h3>UNIT 11</h3>
+    <h1>Web Forms - User Profile/Data</h1>
+  </header>
+  <hr />
+  <section class="user-profile">
+    <form class="form-horizontal" action="/testActionABCDEF" role="form">
+      <fieldset>
+        <legend>Account Setting</legend>
+        <label>
+          <span class="col-25" data-label>Email</span>
+          <input class="col-75" type="email" name="email"  placeholder="email@yourcompany.com">
+        </label>
+        <label>
+          <span class="col-25" data-label>Username</span>
+          <input class="col-75" type="text" name="username"  placeholder="username">
+        </label>
+        <label>
+          <span class="col-25" data-label>Password</span>
+          <input class="col-75" type="password" name="password" placeholder="password">
+        </label>
+        <label>
+          <span class="col-25" data-label>Confirm Password</span>
+          <input class="col-75" type="password" name="confirmpassword" placeholder="password">
+        </label>
+      </fieldset>
+      <hr>
+      <fieldset>
+        <legend>Profile Setting</legend>
+        <label>
+          <span class="col-25" data-label>First Name</span>
+          <input class="col-75" type="text" name="firstname"  placeholder="first name">
+        </label>
+        <label>
+          <span class="col-25" data-label>Last Name</span>
+          <input class="col-75" type="text" name="lastname"  placeholder="last name">
+        </label>
+        <label>
+          <span class="col-25" data-label>Gender</span>
+          <input class="col-75" type="radio" name="gender" checked="" value="male" id="optionsGenderMale">
+          <label class="label-radio" for="optionsGenderMale"> Male </label>
+          <input class="col-75" type="radio" name="gender" value="female" id="optionsGenderFemale">
+          <label class="label-radio" for="optionsGenderFemale"> Female </label>
+        </label>
+        <label>
+          <span class="col-25" data-label>Birthday</span>                      
+          <input class="col-75" type="date" name="birthday" id="datepicker-normal" class="width-40 hasDatepicker">
+        </label>
+        <label>
+          <span class="col-25" data-label>Martial Status</span>
+          <select class="col-75" name="martial-status">
+            <option>Single</option>
+            <option>Married</option>
+          </select>
+        </label>
+        <label>
+          <span  class="col-25" data-label>Position</span>
+          <select class="col-75" name="position">
+            <option value="ceo">CEO</option>
+            <option value="director">Director</option>
+            <option value="manager">Manager</option>
+            <option value="staff">Staff</option>
+            <option value="trainee">Trainee</option>
+          </select>
+        </label>
+        <label>
+          <span  class="col-25" data-label>Interest</span>
+          <select multiple class="col-75" name="interests">
+            <option value="interest1">Interest 1</option>
+            <option value="interest2">Interest 2</option>
+            <option value="interest3">Interest 3</option>
+            <option value="interest4">Interest 4</option>
+            <option value="interest5">Interest 5</option>
+          </select>
+        </label>        <label>
+          <span class="col-25" data-label>About</span>  
+          <textarea class="col-75" name="about" rows="5"></textarea>
+        </label>            
+      </fieldset>                       
+      <hr>
+      <fieldset>
+        <legend>Contact Settings</legend>                      
+        <label>
+          <span class="col-25" data-label>Mobile Number</span>  
+          <input class="col-75" type="tel" name="mobilenumber"  placeholder="mobile phone">
+        </label>  
+        <label>
+          <span class="col-25" data-label>Website</span>   
+          <input class="col-75" type="url" name="website" placeholder="website">
+        </label>  
+      </fieldset>
+      <fieldset class="align-right">
+        <input id="reset" type="reset" value="Clear"></input>              
+        <input id="submit" type="submit" value="Submit"></input>              
+      </fieldset>     
+    </form>
+  </section>
+  <script src="js/main.js"></script>
+</body>
+</html>
