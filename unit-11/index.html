@@ -16,7 +16,7 @@
 
     <!-- POST method: (99%) Mostly use this method and avoid GET -->
     <!-- GET method: Is less secure as data is exposed in the URL - and the length of a URL is limited -->
-    <form method="post">
+    <form method="post" action="http://localhost:3000/submit">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" title="This is an input for name" required />
 
@@ -34,12 +34,12 @@
 
         <select name="selectCar" id="selectCar">
             <option value="">Select Car</option>
-            <option value="male" selected>Mercedes</option>
-            <option value="female">Audi</option>
-            <option value="other">BMW</option>
+            <option value="Mercedes" selected>Mercedes</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
         </select>
 
-        <textarea name="inputTextField" cols="15" rows="5" maxlength="50" id="message-box"></textarea>
+        <textarea id="message" name="message" cols="15" rows="5" maxlength="50"></textarea>
 
         <input type="submit" value="Submit" />
         <input type="reset" value="Cancel" />
