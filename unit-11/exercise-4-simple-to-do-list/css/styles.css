@@ -3,48 +3,65 @@
 }
 
 header {
-    text-align: center;
+  text-align: center;
 }
 
 input[type="text"],
 select,
 textarea {
   width: 100%;
-  padding: 12px;
+  padding: 16px 12px;
   border: none;
   border-radius: 4px;
   resize: vertical;
+  font-size: 14px;
+  border: 2px solid transparent;
+  font-family: "Helvetica Neue";
+  display: inline-block;
+}
+textarea {
+  resize: none;
 }
 input[type="text"]:focus,
 select:focus,
 textarea:focus {
-  border: 1px solid #ccc;
   background: #f8f8f8;
-  outline-color: #d3d3d3;
+  outline: 2px solid black;
 }
+
+input::placeholder {
+  letter-spacing: 0.4px;
+}
+
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
-  float: right;
+  float: left;
 }
 .btn {
-  margin: 10px;
-  padding: 12px 20px;
+  padding: 14px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
+  text-align: center;
 }
 .btn-delete {
   background-color: red;
+  width: 100%;
   color: white;
 }
 input[type="submit"] {
   background-color: #04aa6d;
+  margin: 10px 0;
+  width: 100%;
   color: white;
+  font-weight: bold;
+  font-size: 16px;
 }
 input[type="reset"] {
   background-color: lightslategray;
+  float: right;
+  margin: 0;
   color: white;
 }
 
@@ -56,6 +73,12 @@ input[type="submit"]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+
+.container h3 {
+  border-bottom: 1px solid #000;
+  margin-top: 10px;
+  padding-bottom: 30px;
 }
 
 .col-25 {
@@ -70,6 +93,12 @@ input[type="submit"]:hover {
   margin-top: 6px;
 }
 
+.col-100 {
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+}
+
 /* Clear floats after the columns */
 .row::after {
   content: "";
@@ -79,16 +108,143 @@ input[type="submit"]:hover {
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
+  .btn {
+    margin: 0 auto;
+  }
   .col-25,
-  .col-75,
-  input[type="submit"] {
+  .col-75 {
     width: 100%;
     margin-top: 0;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    width: 100%;
   }
 }
 
 .header,
 .container {
-  max-width: 1024px;
+  /* max-width: 1024px; */
+  max-width: 600px;
   margin: auto;
+}
+
+.component-simple-to-do-list {
+  font-family: "Helvetica Neue";
+  background-color: #fcfcfc;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  letter-spacing: 0.4px;
+  margin-top: 20px;
+}
+
+.component-simple-to-do-list__form {
+  border: 2px solid #e9e9e9;
+  transition: all ease 0.3s 0;
+}
+
+.component-simple-to-do-list .component-simple-to-do-list__items {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 24px rgba(45, 62, 80, 0.12);
+  box-shadow: 0 1px 24px rgba(45, 62, 80, 0.12);
+}
+
+.component-simple-to-do-list__items table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 16px;
+  table-layout: fixed;
+}
+
+.component-simple-to-do-list__items table thead {
+  text-align: left;
+}
+
+.component-simple-to-do-list__items table tbody tr {
+  outline: 1px solid #dbdbdb;
+  border-radius: 8px;
+}
+
+.component-simple-to-do-list__items table thead tr th:nth-child(3),
+.component-simple-to-do-list__items table tbody tr td:nth-child(3) {
+  text-align: center;
+}
+
+.component-simple-to-do-list__items table tbody tr td:nth-child(3) span {
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  background-color: black;
+  color: white;
+  padding: 3px 8px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.component-simple-to-do-list__items th,
+.component-simple-to-do-list__items td {
+  width: 100px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.component-simple-to-do-list__items tr th,
+.component-simple-to-do-list__items tr td {
+  border: 1px solid transparent;
+  transition: all ease 0.3s;
+  padding: 5px;
+}
+
+.component-simple-to-do-list__items tr td:first-child {
+  border-right: 0px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.component-simple-to-do-list__items tr th:first-child,
+.component-simple-to-do-list__items tr td:first-child {
+  padding-left: 10px;
+}
+
+.component-simple-to-do-list__items tr td:last-child {
+  padding: 12px;
+  border: none;
+}
+
+.component-simple-to-do-list__items tr td:nth-child(3) {
+  border-left: 0px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.component-simple-to-do-list__items tr td:not(:first-child, :nth-child(3)) {
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.component-simple-to-do-list__items tr td:first-child {
+  border-right: 0px;
+}
+
+.component-simple-to-do-list__items tr td:nth-child(3) {
+  border-left: 0px;
+}
+
+.component-simple-to-do-list__items tr td button:hover {
+  border-color: green;
+}
+.component-simple-to-do-list__items tr td:not(:last-child) {
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+}
+
+.component-simple-to-do-list__items tr td:nth-child(2) {
+  word-break: break-word;
+}
+
+select:has(option:checked:disabled) {
+  color: #868686;
 }

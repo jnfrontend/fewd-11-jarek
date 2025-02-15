@@ -29,7 +29,7 @@
       let outputHtml = `<tr class="to-do-item">
               <td>${toDoItem["title"]}</td>
               <td>${toDoItem["description"]}</td>
-              <td>${toDoItem["priority"]}</td>
+              <td><span>${toDoItem["priority"]}</span></td>
               <td><button class="btn btn-delete">Delete</button></td>
             </tr>`;
       itemsContainer.innerHTML += outputHtml;
@@ -42,8 +42,10 @@
     toDoListForm.addEventListener("submit", (event) => {
       console.log("submit");
       event.preventDefault();
+
       const newToDoItem = getFormData();
       renderToDoListContainer(newToDoItem);
+      toDoListForm.reset(); // clear form after submission/add item
     });
 
     // reset event handler
@@ -52,12 +54,14 @@
     });
 
     // delete event handler
-    const toDoLists = toDoList.querySelector(
-      ".component-simple-to-do-list__items"
-    );
+    const toDoLists = toDoList.querySelector(".component-simple-to-do-list__items");
+
     toDoLists.addEventListener("click", (event) => {
-      console.log("deleting item");
-      event.target.closest("tr").remove(); // delete item/row from table
+        // first check if dynamically added "delete" button exists
+        if (event.target.classList.contains("btn-delete")) {
+            console.log("deleting item");
+            event.target.closest("tr").remove(); // delete item/row from table
+          }
     });
   }
 
