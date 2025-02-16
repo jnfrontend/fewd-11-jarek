@@ -8,7 +8,7 @@
 
 <br>
 
-|Unit|Subject|Status|🔀 PR|
+|#|Subject|Status|🔀 PR|
 |---|---|---|---|
 |<p align="center">01</p>|&#x2611; Getting Started|<p align="center">Done</p>|<p align="center">[Unit-1](https://github.com/jnfrontend/fewd-11-jarek/pull/1)</p>|
 |<p align="center">02</p>|&#x2611; HTML - Structuring the Web|<p align="center">Done</p>|<p align="center">[Unit-2](https://github.com/jnfrontend/fewd-11-jarek/pull/2)</p>|
@@ -22,7 +22,7 @@
 |<p align="center">08</p>|&#x2611; Project Update / Review 👀|<p align="center">Done</p>|<p align="center">[Unit-8]()</p>|
 |<p align="center">09</p>|&#x2611; JavaScript - Modifying the Document Object Model (DOM)|<p align="center">Done</p>|<p align="center">[Unit-9](https://github.com/jnfrontend/fewd-11-jarek/pull/12)</p>|
 |<p align="center">10</p>|&#x2611; Dynamic HTML|<p align="center">Done</p>|<p align="center">[Unit-10](https://github.com/jnfrontend/fewd-11-jarek/pull/13)</p>|
-|<p align="center">11</p>|&#x2611; Web Forms - Working with User Data|<p align="center"></p>|<p align="center">[Unit-11](https://github.com/jnfrontend/fewd-11-jarek/pull/21)</p>|
+|<p align="center">11</p>|&#x2611; Web Forms - Working with User Data|<p align="center">Done</p>|<p align="center">[Unit-11](https://github.com/jnfrontend/fewd-11-jarek/pull/21)</p>|
 |<p align="center">12</p>|&#x2610; JavaScript - Advanced|<p align="center"></p>||
 |<p align="center">13</p>|&#x2610; Building a Web Application with JavaScript|<p align="center"></p>||
 |<p align="center">14</p>|&#x2610; Introduction to CSS Frameworks - Bootstrap|<p align="center"></p>||
