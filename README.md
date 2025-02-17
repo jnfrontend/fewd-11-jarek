@@ -1,5 +1,5 @@
-![ucd-logo-dark](https://github.com/user-attachments/assets/f779a03d-c41a-4166-b2c0-1a9bb916fab2#gh-light-mode-only)
-![ucd-logo-light](https://github.com/user-attachments/assets/82f4a6af-d8f6-4150-8fcd-8dfcdbae9865#gh-dark-mode-only)
+![ucd-logo](https://github.com/user-attachments/assets/f779a03d-c41a-4166-b2c0-1a9bb916fab2)<br>
+![ucd-logo](https://github.com/user-attachments/assets/82f4a6af-d8f6-4150-8fcd-8dfcdbae9865#gh-dark-mode-only)
 
 # Front End Web Development
 > `fewd-11-jarek`
