@@ -1,7 +1,5 @@
-<picture>
-  <source media="(prefers-color-scheme: Light: 'light' Dark: 'dark')" srcset="https://github.com/user-attachments/assets/c5c6ceb6-b848-4cf1-99b6-827732d22268">
-  <img  alt="UCD Logo"src="https://github.com/user-attachments/assets/a43e32fc-0363-4d0f-bc8c-6b0d863ba7cc">
-</picture>
+![ucd-logo-dark](https://github.com/user-attachments/assets/f779a03d-c41a-4166-b2c0-1a9bb916fab2#gh-dark-mode-only)
+![ucd-logo-light](https://github.com/user-attachments/assets/82f4a6af-d8f6-4150-8fcd-8dfcdbae9865#gh-light-mode-only)
 
 # Front End Web Development
 > `fewd-11-jarek`
