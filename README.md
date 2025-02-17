@@ -1,7 +1,8 @@
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://www.ucd.ie/professionalacademy/assets/images/design/logo-v2.svg">
-  <img alt="UCD Logo" src="https://www.ucd.ie/professionalacademy/assets/images/design/logo-v2.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/833fa641-9d37-4287-a7a1-762c4519d000">
+  <img alt="UCD Logo" src="https://github.com/user-attachments/assets/320b2673-8875-4778-b085-b1f92d751b64">
 </picture>
+
 
 # Front End Web Development
 > `fewd-11-jarek`
