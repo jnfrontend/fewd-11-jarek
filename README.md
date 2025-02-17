@@ -1,8 +1,8 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/833fa641-9d37-4287-a7a1-762c4519d000">
-  <img alt="UCD Logo" src="https://github.com/user-attachments/assets/320b2673-8875-4778-b085-b1f92d751b64">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/c5c6ceb6-b848-4cf1-99b6-827732d22268">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/a43e32fc-0363-4d0f-bc8c-6b0d863ba7cc">
+  <img  alt="UCD Logo"src="https://github.com/user-attachments/assets/a43e32fc-0363-4d0f-bc8c-6b0d863ba7cc">
 </picture>
-
 
 # Front End Web Development
 > `fewd-11-jarek`
