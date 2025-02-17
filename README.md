@@ -1,6 +1,5 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/c5c6ceb6-b848-4cf1-99b6-827732d22268">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/a43e32fc-0363-4d0f-bc8c-6b0d863ba7cc">
+  <source media="(prefers-color-scheme: Light: 'light' Dark: 'dark')" srcset="https://github.com/user-attachments/assets/c5c6ceb6-b848-4cf1-99b6-827732d22268">
   <img  alt="UCD Logo"src="https://github.com/user-attachments/assets/a43e32fc-0363-4d0f-bc8c-6b0d863ba7cc">
 </picture>
 
