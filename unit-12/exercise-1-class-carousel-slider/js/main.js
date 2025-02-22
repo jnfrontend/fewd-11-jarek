@@ -1,83 +1,96 @@
 // code is wrapped in an IIFE (Immediately Invoked Function Expression). See https://developer.mozilla.org/en-US/docs/Glossary/IIFE for more details
 //
 (() => {
-  // globals
-  const componentCarousel = document.querySelector(".component-carousel");
-  let navigationDots = null; // add navigation dots
-  const navigationButtons = componentCarousel.querySelectorAll(".navigation-buttons > a");
-  const slides = document.getElementsByClassName("slide");
+  class CarouselSlider {
+    // Private properties (for global variables in the original implementation)
+    #componentCarousel;
+    #navigationDots = null;
+    #navigationButtons;
+    #slides;
+    #currentIndex = 0;
 
-  let currentIndex = 0;
+    constructor() {
+      // Select component-carousel element and initialize private properties
+      this.#componentCarousel = document.querySelector(".component-carousel");
+      this.#navigationDots = null; // add navigation dots
+      this.#navigationButtons = this.#componentCarousel.querySelectorAll(".navigation-buttons > a");
+      this.#slides = document.getElementsByClassName("slide");
+      this.#currentIndex = 0;
 
-  //Initiate moving of slides
-  function showSlides(n) {
-    let i;
-    currentIndex = n;
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      // Start add navigation dots
+      let navigationDotsHtml = "";
+      for (let i = 0; i < this.#slides.length; i++) {
+        navigationDotsHtml += '<span class="navigation-dot"></span>';
+      }
+
+      const navDotsFragment = new DocumentFragment(); // https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment
+      let navDotsDiv = document.createElement("div");
+      navDotsDiv.className = "navigation-dot-container";
+      navDotsDiv.innerHTML = navigationDotsHtml;
+      navDotsFragment.append(navDotsDiv);
+      this.#componentCarousel.querySelector(".carousel-container").appendChild(navDotsFragment);
+      this.#navigationDots = this.#componentCarousel.querySelectorAll(".navigation-dot");
+      // End add navigation dots
+
+      this.#showSlides(this.#currentIndex); // Pass the current index to showSlides()
+      // Add event handlers for navigation buttons
+      this.#navigationButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          if (event.target.className === "next") {
+            this.#currentIndex = this.#incrementIndex(1); // move image by 1
+          }
+          if (event.target.className === "previous") {
+            this.#currentIndex = this.#incrementIndex(this.#slides.length - 1); // Reverse slide image direction by -1
+          }
+          this.#showSlides(this.#currentIndex);
+        });
+      });
+
+      // add event handlers for navigation dots
+      this.#navigationDots.forEach((dot) => {
+        dot.addEventListener("click", (event) => {
+          // find index of current dot
+          const parent = event.target.parentNode;
+          const index = [].indexOf.call(parent.children, event.target);
+          this.#showSlides(index);
+        });
+      });
+
+      // automate movement of the slides
+      /*
+      setInterval(() => {
+        this.#showSlides(this.#incrementIndex(1));
+      }, "2000");
+      */
+     
+    } // END of CONSTRUCTOR FUNCTION
+
+    //Initiate moving of slides
+    #showSlides(n) {
+      let i;
+      this.#currentIndex = n;
+      for (let i = 0; i < this.#slides.length; i++) {
+        this.#slides[i].style.display = "none";
+      }
+      for (let i = 0; i < this.#navigationDots.length; i++) {
+        this.#navigationDots[i].className = this.#navigationDots[i].className.replace(" active", "");
+      }
+      this.#slides[this.#currentIndex].style.display = "flex";
+      this.#navigationDots[this.#currentIndex].className += " active";
     }
-    for (let i = 0; i < navigationDots.length; i++) {
-      navigationDots[i].className = navigationDots[i].className.replace(
-        " active",
-        ""
-      );
-    }
-    slides[currentIndex].style.display = "flex";
-    navigationDots[currentIndex].className += " active";
-  }
 
-  // named function expression
-  const incrementIndex = (increment) =>
-    Math.abs((currentIndex + increment) % slides.length);
+    // Named function expression
+    #incrementIndex = (increment) => Math.abs((this.#currentIndex + increment) % this.#slides.length);
 
+  } // END CLASS/CarouselSlider
+
+  // Call the initCarousel function when the page loads
   function initCarousel() {
-    // start add navigation dots
-    let navigationDotsHtml = "";
-    for (let i = 0; i < slides.length; i++) {
-      navigationDotsHtml += '<span class="navigation-dot"></span>';
-    }
-
-    const navDotsFragment = new DocumentFragment(); // https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment
-    let navDotsDiv = document.createElement("div");
-    navDotsDiv.className = "navigation-dot-container";
-    navDotsDiv.innerHTML = navigationDotsHtml;
-    navDotsFragment.append(navDotsDiv);
-    componentCarousel.querySelector(".carousel-container").appendChild(navDotsFragment);
-    navigationDots = componentCarousel.querySelectorAll(".navigation-dot");
-    // end add navigation dots
-
-    showSlides(currentIndex);
-    // add event handlers for navigation buttons
-    navigationButtons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-        if (event.target.className === "next") {
-          currentIndex = incrementIndex(1); // move image by 1
-        }
-        if (event.target.className === "previous") {
-          currentIndex = incrementIndex(slides.length - 1); // Reverse slide image direction by 1
-        }
-        showSlides(currentIndex);
-      });
-    });
-    // add event handlers for navigation dots
-    navigationDots.forEach((dot) => {
-      dot.addEventListener("click", (event) => {
-        // find index of current dot
-        const parent = event.target.parentNode;
-        const index = [].indexOf.call(parent.children, event.target);
-        showSlides(index);
-      });
-    });
-    
-    // automate movement of the slides
-    /*
-    setInterval(() => {
-      showSlides(incrementIndex(1));
-    }, "2000"); 
-    */
+    const carouselSlider = new CarouselSlider();
   }
 
+  // Add event listener to the window's "load" event to ensure the carousel is initialized after the page has fully loaded.
   window.addEventListener("load", (event) => {
     initCarousel();
   });
