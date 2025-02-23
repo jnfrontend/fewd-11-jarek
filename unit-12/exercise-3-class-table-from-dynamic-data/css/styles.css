@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&family=Playwrite+IE:wght@100..400&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#search,
+#content,
+footer > section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 12px 10px;
+}
+header {
+  background: url("https://cdn.pixabay.com/photo/2021/10/18/19/04/mountains-6721870_1280.jpg")
+    no-repeat;
+  background-position-y: 85%;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-height: 380px;
+  overflow: hidden;
+}
+header h1 {
+  font-family: "Playwrite IE", serif;
+  font-size: 52px;
+}
+header h1 span {
+  font-weight: bold;
+  font-size: 28px;
+}
+h2 {
+  font-family: "Irish Grover", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+}
+footer {
+  background-color: black;
+  min-height: 100px;
+  color: white;
+}
+
+/* generated on https://divtable.com/table-styler/ */
+table.greenTable {
+  border: 1px solid #ddd;
+  background-color: #eeeeee;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  /* border-collapse: collapse; */
+  border-collapse: separate;
+  letter-spacing: 0.4px;
+  border-left: 0;
+  border-radius: 8px;
+  border-spacing: 0px;
+  border-right: 0;
+}
+table.greenTable td,
+table.greenTable th {
+  padding: 14px 10px;
+  vertical-align: top;
+  border-left: 1px solid transparent;
+}
+table.greenTable td:last-child,
+table.greenTable th:last-child {
+  border-right: 1px solid #248c462e;
+}
+table.greenTable tbody td {
+  font-size: 13px;
+}
+table.greenTable tr:nth-child(even) {
+  background: #c2d7c8a3;
+}
+table.greenTable thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-collapse: separate;
+}
+table.greenTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 16px 10px;
+  background: #248c46;
+  /* border-left: 1px solid #8abb99; */
+}
+table.greenTable thead th:first-child {
+  border-left: none;
+}
+table.greenTable thead th:last-child {
+  border-radius: 0 8px 0 0;
+  border-right: none;
+}
+
+table.greenTable tbody td:first-child {
+  border-left: 1px solid #ddd;
+}
+
+table.greenTable thead:first-child tr:first-child th:first-child,
+table.greenTable tbody:first-child tr:first-child td:first-child {
+  border-radius: 8px 0 0 0;
+}
+table.greenTable thead:last-child tr:last-child th:first-child,
+table.greenTable tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 8px;
+}
+
+table.greenTable tbody:last-child tr:last-child td:last-child {
+  border-radius: 0 0 8px 0;
+}
