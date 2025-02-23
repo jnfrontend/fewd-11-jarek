@@ -10,30 +10,46 @@
     constructor(data) {
       this.data = data;
       this.contentContainer = document.getElementById("content");
+      this.loadHolidayData(); // Init fetch()
     }
- 
-  async loadHolidayData() {
-    try {
-      // After this line, our function will wait for the `fetch()` call to be settled 
-      // The `fetch()` call will either return a Response or throw an error
-      const response = await fetch("https://date.nager.at/api/v3/PublicHolidays/2025/IE");
-      if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
+
+    async loadHolidayData() {
+      try {
+        // After this line, our function will wait for the `fetch()` call to be settled
+        // The `fetch()` call will either return a Response or throw an error
+        const response = await fetch(
+          "https://date.nager.at/api/v3/PublicHolidays/2025/IE"
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        console.log(response);
+
+        // After this line, our function will wait for the `response.json()` call to be settled
+        // The `response.json()` call will either return the parsed JSON object or throw an error
+        const decodedJsonData = await response.json();
+        console.log(decodedJsonData);
+
+        this.data = decodedJsonData; // Update the data property with the fetched data
+        this.render();
+
+        return decodedJsonData; // Return the decoded JSON data for further processing
+      } catch (error) {
+        console.error(`Could not get public holidays: ${error}`);
+        this.contentContainer.innerHTML = `
+          <h2>Error</h2>
+          <p>No public holidays to display.</p>
+          <p>${error.message}</p>
+        `;
       }
-      console.log(response);
-
-      // After this line, our function will wait for the `response.json()` call to be settled
-      // The `response.json()` call will either return the parsed JSON object or throw an error 
-      const decodedJsonData = await response.json();
-      console.log(decodedJsonData);
-
-      return decodedJsonData; // return the decoded JSON data for further processing
-    } catch (error) {
-      console.error(`Could not get products: ${error}`);
     }
-  }
 
     render() {
+      if (!this.data || this.data.length === 0) {
+        this.contentContainer.innerHTML = "<p>No holidays data available to display.</p>";
+        return;
+      }
+
       let hols = this.data;
       let outputHtml = `
         <div class="table-container">
@@ -67,22 +83,16 @@
       this.contentContainer.innerHTML = outputHtml; // Display holidays data in the container <table>
     }
   } // END Class: DataTable
-  
 
   function init() {
-    try {      
-      // Load data as a JS object and pass the data to the DataTable class
+    try {
+      // Init DataTable
       const dataTable = new DataTable();
-      console.log(dataTable);
-      dataTable.loadHolidayData().then((data) => {
-        console.log("Irish Public Holidays 2025 - Data:", data);
-        dataTable.data = data;
-        dataTable.render();
-      });
-      
     } catch (err) {
       console.error(err);
-      contentContainer.innerHTML = "<h2>Error</h2><p>No public holidays to display.</p><p>" + err + "</p>";
+      const contentContainer = document.getElementById("content");
+      contentContainer.innerHTML =
+        "<h2>Error</h2><p>No public holidays to display.</p><p>" + err + "</p>";
     }
   }
 
