@@ -16,13 +16,13 @@
       let outputHtml = `
         <div class="table-container">
             <h2>List of Public Holidays in Ireland for 2025</h2>
-                <table class="blueTable">
+                <table class="greenTable">
                     <thead>
                         <tr>
                             <th>Date</th>
                             <th>Name (in Irish)</th>
                             <th>Name</th>
-                            <th>Country Code</th>
+                            <th align="center">Country Code</th>
                             <th>Types</th>
                         </tr>
                     </thead>
@@ -34,7 +34,7 @@
                 <td>${hols[i].date}</td>
                 <td>${hols[i].localName}</td>
                 <td>${hols[i].name}</td>
-                <td>${hols[i].countryCode}</td>
+                <td align="center">${hols[i].countryCode}</td>
                 <td>${hols[i].types}</td>
             </tr>`;
       }
@@ -48,11 +48,13 @@
 
   function init() {
     try {
+      console.log('Irish Public Holidays 2024 - Data:', dataIPH24);
+      console.log('Irish Public Holidays 2025 - Data:', dataIPH25);
       // Load data as a JS object
-      console.log('Data is: ', data);
-      const dataTable = new DataTable(data);
+      // Create a new instance of the DataTable class and pass the data to it.
+      const dataTable = new DataTable(dataIPH25);
       console.log(dataTable);
-      dataTable.render(); // Render table
+      dataTable.render(); // Render table with the data (JSON "dataIPH25");
     } catch (err) {
       console.error(err);
       contentContainer.innerHTML = "<h2>Error</h2><p>No public holidays to display.</p><p>" + err + "</p>";
