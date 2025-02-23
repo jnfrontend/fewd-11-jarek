@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  text-align: center;
+}
+.user-profile {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+fieldset {
+  border: 0;
+}
+fieldset > label {
+  display: block;
+  height: 2.5rem;
+}
+legend {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+label > span {
+  padding-right: 10px;
+  vertical-align: middle;
+}
+label > span::after {
+  content: ": ";
+  font-weight: 700;
+}
+input, select, textarea {
+  border: 1px solid darkgray;
+  width: 100%;
+  border-radius: 4px;
+  resize: vertical;
+  padding: 5px;
+}
+textarea {
+  height: unset !important;
+}
+input[type=radio] {
+  width: unset;
+  margin-top: 0;
+}
+label > .label-radio {
+  float: left;
+  margin: unset;
+  line-height: 2.5rem;
+  padding: 0 5px;
+}
+input[type=text]:focus, 
+select:focus, 
+textarea:focus {
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  outline-color: #d3d3d3;
+}
+label {
+  margin: 15px 0;
+}
+input[type=reset],
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: unset;
+  font-weight: 700;
+}
+input[type=reset] {
+  background-color: lightgrey;
+  color: unset; 
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+input[type=reset]:hover {
+  background-color: grey;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: right;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.col-75 {
+  float: left;
+  height: 100%;
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.align-right {
+  text-align: right;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, 
+  .col-75, 
+  input[type=reset], 
+  input[type=submit] {
+    width: 100%;
+    display:block;
+    margin-top: 0;
+    text-align: left;
+  }
+  input[type=reset],
+  input[type=submit] {
+    text-align: center;
+    margin: 5px 0;
+  }
+}
