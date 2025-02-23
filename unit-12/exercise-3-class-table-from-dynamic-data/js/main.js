@@ -70,10 +70,7 @@
   
 
   function init() {
-    try {
-      // console.log("Irish Public Holidays 2024 - Data:", dataIPH24);
-      // console.log("Irish Public Holidays 2025 - Data:", dataIPH25);
-      
+    try {      
       // Load data as a JS object and pass the data to the DataTable class
       const dataTable = new DataTable();
       console.log(dataTable);
