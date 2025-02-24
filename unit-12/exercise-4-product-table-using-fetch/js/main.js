@@ -6,9 +6,11 @@
     // Properties
     data;
     contentContainer;
+    apiProductsUrl;
 
-    constructor(data) {
-      this.data = data;
+    constructor(apiProductsUrl) {
+      // this.data = data;
+      this.apiProductsUrl = apiProductsUrl;
       this.contentContainer = document.getElementById("content");
       this.loadProductData(); // Init fetch()
     }
@@ -17,9 +19,7 @@
       try {
         // After this line, our function will wait for the `fetch()` call to be settled
         // The `fetch()` call will either return a Response or throw an error
-        const response = await fetch(
-          "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
-        );
+        const response = await fetch(this.apiProductsUrl);
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }
@@ -68,7 +68,7 @@
                     <tbody>`;
 
       for (let i in products) {
-        console.log("Hols-td-" + [i], products[i]);
+        console.log("Products-td-" + [i], products[i]);
   
         // Create image path for the product
         const productImagePath = `${apiAssetsImagesUrl}${products[i].image}`;
@@ -91,8 +91,10 @@
 
   function init() {
     try {
+      const productsDataUrl = "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json";
+
       // Init DataTable
-      const dataTable = new DataTable();
+      const dataTable = new DataTable(productsDataUrl);
     } catch (err) {
       console.error(err);
       const contentContainer = document.getElementById("content");
