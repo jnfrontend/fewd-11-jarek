@@ -6,7 +6,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #search,
-#content,
+.content,
 footer > section {
   max-width: 1440px;
   margin: auto;
@@ -33,6 +33,7 @@ header h1 span {
 }
 h2 {
   font-family: "Irish Grover", serif;
+  margin-bottom: 20px;
   font-weight: 400;
   font-style: normal;
   font-size: 48px;
@@ -76,7 +77,7 @@ table.greenTable td:last-child {
 }
 table.greenTable tbody td {
   vertical-align: middle;
-  font-size: 13px;
+  font-size: 14px;
 }
 table.greenTable tbody td.product_img {
   text-align: center;
@@ -96,13 +97,15 @@ table.greenTable thead {
   border-collapse: separate;
 }
 table.greenTable thead th {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   color: #ffffff;
   padding: 16px 10px;
   background: #248c46;
+  width: calc(100% / 4);
   /* border-left: 1px solid #8abb99; */
 }
+
 table.greenTable thead th:first-child {
   border-left: none;
 }
@@ -129,29 +132,28 @@ table.greenTable tbody:last-child tr:last-child td:last-child {
   border-radius: 0 0 8px 0;
 }
 
-table.greenTable th.header_countryCode,
-table.greenTable td.item_countryCode {
-text-align: center;
+.public-holiday-country {
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  border: 2px solid black;
 }
 
-table.greenTable th.header_countryCode,
-table.greenTable th.header_fixed,
-table.greenTable th.header_global,
-table.greenTable th.header_counties,
-table.greenTable th.header_launchYear,
-table.greenTable th.header_price,
-table.greenTable th.header_image,
-table.greenTable td.item_countryCode,
-table.greenTable td.item_fixed,
-table.greenTable td.item_global,
-table.greenTable td.item_counties,
-table.greenTable td.item_launchYear,
-table.greenTable td.item_price {
-  text-transform: capitalize;
-  text-align: center;
+.public-holiday-country select {
+  border: none;
+  background-color: transparent;
+  border-radius: 6px;
+  font-size: 16px;
+  letter-spacing: .4px;
+  padding: 10px;
+  margin-right: 20px;
+  outline: none;
+  cursor: pointer;
 }
-
-table.greenTable td.item_price:before {
-  content: "€";
-  margin-right: 2px;
+.public-holiday-country select:last-child {
+  margin-right: 14px;
+}
+.public-holiday-country select:hover {
+  transition: background-color .5s ease .2s;
+  background-color: #eeeeee;
 }

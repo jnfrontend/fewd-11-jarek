@@ -1,0 +1,160 @@
+// code is wrapped in an IIFE (Immediately Invoked Function Expression). See https://developer.mozilla.org/en-US/docs/Glossary/IIFE for more details
+//
+
+(() => {
+  class PublicHolidaysDataTable {
+    // Properties
+    #dataUrl = "https://date.nager.at/api/v3/PublicHolidays/"; // Base URL to REST API
+    #country = "IE"; // Default country
+    #year = "2025"; // Default year
+    #data // Data object returned via fetch()
+    #tableTitle; // Title text for component
+    #componentRoot; // DOM node for component
+    #columnNames; // An array of column names to display
+
+    constructor(tableTitle) {
+      this.#tableTitle = tableTitle;
+      this.#componentRoot = document.getElementById("public-holidays-component");
+      this.loadData(); // Init fetch() - load data using fetch and build the table
+      this.#columnNames = ['date', 'localName', 'name', 'types'];
+      // Event handler - to update the table data based on the selected Country and Year
+      this.#componentRoot.addEventListener("change", this);
+    }
+
+    getComponentRoot() {
+      return this.#componentRoot;
+    }
+
+    // loadData Method
+    async loadData() {
+      try {
+        // After this line, our function will wait for the `fetch()` call to be settled
+        // The `fetch()` call will either return a Response or throw an error
+        const response = await fetch(this.#dataUrl + this.#year + "/" + this.#country);
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        console.log(response);
+
+        // After this line, our function will wait for the `response.json()` call to be settled
+        // The `response.json()` call will either return the parsed JSON object or throw an error
+        this.#data = await response.json(); // Update the #data property with the fetched decoded JSON Data
+        console.log(this.#data);
+        this.render(); // Pass the response(decodedJsonData) to the render() function and update the DOM
+      } catch (error) {
+        console.error(`Could not get data: ${error}`);
+        this.#componentRoot.innerHTML = `
+          <h2>Error</h2>
+          <p>No holidays data to display.</p>
+          <p>${error.message}</p>
+        `;
+      }
+    }
+
+    // Method to render table
+    render() {
+      if (!this.#data || this.#data.length === 0) {
+        this.#componentRoot.innerHTML = "<p>No data available to display.</p>";
+        return;
+      }
+
+      console.log('Render this data: ', this.#data);
+      console.log('Table Title: ' + this.#tableTitle);
+      // Get the property names of the first object in the data array
+      const objPropertyNamesHeaders = Object.getOwnPropertyNames(this.#data[0]);
+      const colNames = this.#columnNames;
+
+      // Create table with json data object {property:value} 
+      let outputHtml = `
+      <h2>${this.#tableTitle}</h2>
+      <div class="public-holiday-country">
+            <label>
+                <span class="col-25" hidden data-label>Country</span>
+                <select class="col-75" name="country">
+                    <option value="">Select a Country</option>
+                    <option value="IE">Ireland</option>
+                    <option value="FR">France</option>
+                    <option value="ES">Spain</option>
+                </select>
+            </label>
+            <label>
+                <span class="col-25" hidden data-label>Year</span>
+                <select class="col-75" name="year">
+                    <option value="">Select a Year</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
+            </label>
+        </div>
+        <div class="table-container">
+                <table class="greenTable">
+                    <thead>
+                        <tr>`;
+
+      let tableHeaders = "";
+      for (let header in objPropertyNamesHeaders) {
+        // Check if propNames(array with hardcoded column names) exists in objPropertyNamesHeaders
+        if (colNames.includes(objPropertyNamesHeaders[header])) {
+          tableHeaders += `<th class="header_${objPropertyNamesHeaders[header]}">${objPropertyNamesHeaders[header]}</th>`;
+        }
+      }
+
+      outputHtml += tableHeaders;
+      outputHtml += `</tr></thead><tbody>`; // Close table headers(with object property names) and oppen table body
+
+      for (let i in this.#data) {
+        let tableItem = this.#data[i];
+        console.log("DATA Object - Table Column Items", tableItem);
+
+        let tableRow = "<tr>";
+        for (let header in objPropertyNamesHeaders) {
+          if (colNames.includes(objPropertyNamesHeaders[header])) { 
+            let tableColumnName = objPropertyNamesHeaders[header];
+            // console.log("Table Header Name: ", tableColumnName);
+  
+            tableRow += `<td class="item_${tableColumnName}">${String(tableItem[tableColumnName]) || ""}</td>`;
+          }
+          
+        }
+        tableRow += "</tr>";
+
+        outputHtml += tableRow;
+      }
+
+      outputHtml += `</tbody></table></div>`;
+      this.#componentRoot.innerHTML = outputHtml; // Display table with data in selected container (contentContainer)
+    }
+
+    handleEvent(event) {
+      console.log("handleEvent:", event.target.name, event.target.value);
+
+      switch(event.target.name) {
+          case "country":
+              this.#country = event.target.value;
+              break;
+          case "year":
+              this.#year = event.target.value;
+              break;
+          default: // default (country: IE, year: 2025)
+      }
+      this.loadData();
+  }
+  } // END Class: PublicHolidaysDataTable
+
+  function init() {
+    // Init PublicHolidaysDataTable
+    let holidaysDataTable = null;
+    try {
+      // Holidays table
+      // Build table using an instance of PublicHolidaysDataTable class and set table title: "List of Public Holidays"
+      holidaysDataTable = new PublicHolidaysDataTable('List of Public Holidays');
+    } catch(err) {
+      console.error(err.message);
+    }
+  }
+
+  window.addEventListener("load", (event) => {
+    init();
+  });
+})(); // END EventListener
