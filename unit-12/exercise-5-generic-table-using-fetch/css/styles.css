@@ -58,6 +58,9 @@ table.greenTable {
   border-spacing: 0px;
   border-right: 0;
 }
+table.greenTable th {
+  text-transform: capitalize;
+}
 table.greenTable td,
 table.greenTable th {
   padding: 14px 10px;
@@ -74,6 +77,9 @@ table.greenTable td:last-child {
 table.greenTable tbody td {
   vertical-align: middle;
   font-size: 13px;
+}
+table.greenTable tbody td.product_img {
+  text-align: center;
 }
 table.greenTable tbody td.product_img img {
   border-radius: 4px;
@@ -121,4 +127,31 @@ table.greenTable tbody:last-child tr:last-child td:first-child {
 
 table.greenTable tbody:last-child tr:last-child td:last-child {
   border-radius: 0 0 8px 0;
+}
+
+table.greenTable th.header_countryCode,
+table.greenTable td.item_countryCode {
+text-align: center;
+}
+
+table.greenTable th.header_countryCode,
+table.greenTable th.header_fixed,
+table.greenTable th.header_global,
+table.greenTable th.header_counties,
+table.greenTable th.header_launchYear,
+table.greenTable th.header_price,
+table.greenTable th.header_image,
+table.greenTable td.item_countryCode,
+table.greenTable td.item_fixed,
+table.greenTable td.item_global,
+table.greenTable td.item_counties,
+table.greenTable td.item_launchYear,
+table.greenTable td.item_price {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+table.greenTable td.item_price:before {
+  content: "€";
+  margin-right: 2px;
 }

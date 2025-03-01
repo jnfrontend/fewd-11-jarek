@@ -6,14 +6,17 @@
     // Properties
     data;
     API_URL;
+    tableTitle;
+    imageAssetsUrl;
     contentContainer;
 
-    constructor(API_URL, contentContainer) {
+    constructor(API_URL, contentContainer, imageAssetsUrl, tableTitle) {
       this.data = [];
       this.API_URL = API_URL;
-      this.contentContainer = contentContainer;
-      // this.contentContainer = document.getElementById("content");
-      this.loadData(); // Init fetch()
+      this.tableTitle = tableTitle;
+      this.contentContainer = contentContainer; // document.getElementById("content");
+      this.imageAssetsUrl = imageAssetsUrl;
+      this.loadData(); // Init fetch() API Data (API_URL)
     }
 
     async loadData() {
@@ -51,21 +54,22 @@
       }
 
       console.log('Render this data: ', this.data);
-
+      console.log('Table Title: ' + this.tableTitle);
       // Get the property names of the first object in the data array
       const objPropertyNameHeaders = Object.getOwnPropertyNames(this.data[0]);
+      const imgAssetsUrl = this.imageAssetsUrl;
 
-      // Create table with json data properties
+      // Create table with json data object {property:value} 
       let outputHtml = `
         <div class="table-container">
-            <h2>Table Heading</h2>
+            <h2>${this.tableTitle}</h2>
                 <table class="greenTable">
                     <thead>
                         <tr>`;
 
       let tableHeaders = "";
       for (let header in objPropertyNameHeaders) {
-        tableHeaders += `<th>${objPropertyNameHeaders[header]}</th>`;
+        tableHeaders += `<th class="header_${objPropertyNameHeaders[header]}">${objPropertyNameHeaders[header]}</th>`;
       }
 
       outputHtml += tableHeaders;
@@ -79,7 +83,13 @@
         for (let header in objPropertyNameHeaders) {
           let tableColumnName = objPropertyNameHeaders[header];
           // console.log("Table Header Name: ", tableColumnName);
-          tableRow += `<td>${String(tableItem[tableColumnName]) || ""}</td>`;
+
+          if (tableColumnName.toLowerCase().includes("image")) { 
+            tableRow += `<td class="product_img"><img src="${imgAssetsUrl}${tableItem[tableColumnName]}" alt="Product Image"></td>`;
+          } else {
+            tableRow += `<td class="item_${tableColumnName}">${String(tableItem[tableColumnName]) || ""}</td>`;
+          }
+          
         }
         tableRow += "</tr>";
 
@@ -92,13 +102,14 @@
   } // END Class: DataTable
 
   function init() {
-    const tableContainer = document.getElementById("content");
+    const tableContainer = document.getElementById("content"); // Point the selector, where the DataTable will be displayed.
+    const productsImageAssetsUrl = "https://raw.githubusercontent.com/mdn/learning-area/main/javascript/apis/fetching-data/can-store/images/";
     const productsDataUrl = "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json";
     const holidaysDataUrl = "https://date.nager.at/api/v3/PublicHolidays/2025/IE";
 
     // Init DataTable
-    new DataTable(holidaysDataUrl, tableContainer);
-    new DataTable(productsDataUrl, tableContainer);
+    new DataTable(holidaysDataUrl, tableContainer, '', 'List of Public Holidays for Ireland 2025');
+    new DataTable(productsDataUrl, tableContainer, productsImageAssetsUrl, 'List of Products');
   }
 
   window.addEventListener("load", (event) => {
