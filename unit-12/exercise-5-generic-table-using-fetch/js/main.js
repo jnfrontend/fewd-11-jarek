@@ -14,7 +14,7 @@
       this.data = [];
       this.API_URL = API_URL;
       this.tableTitle = tableTitle;
-      this.contentContainer = contentContainer; // document.getElementById("content");
+      this.contentContainer = contentContainer;
       this.imageAssetsUrl = imageAssetsUrl;
       this.loadData(); // Init fetch() API Data (API_URL)
     }
@@ -97,7 +97,7 @@
       }
 
       outputHtml += `</tbody></table></div>`;
-      this.contentContainer.innerHTML += outputHtml; // Display table with data in a container ()
+      this.contentContainer.innerHTML += outputHtml; // Display table with data in selected container (contentContainer)
     }
   } // END Class: DataTable
 
