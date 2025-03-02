@@ -118,7 +118,7 @@
             let tableColumnName = objPropertyNamesHeaders[header];
             // console.log("Table Header Name: ", tableColumnName);
 
-            tableRow += `<td class="item_${tableColumnName}">${String(tableItem[tableColumnName]) || ""}</td>`;
+            tableRow += `<td class="item_${tableColumnName}">${tableItem[tableColumnName] ? String(tableItem[tableColumnName]) : ""}</td>`;
           }
         }
         tableRow += "</tr>";
@@ -129,24 +129,29 @@
       outputHtml += `</tbody></table></div>`;
       this.#componentRoot.innerHTML = outputHtml; // Display table with data in this.#componentRoot = "#public-holidays-component" selector
       
-      // Display selected Country Name in Table Title
-      const countriesOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="country"]');
-      let selectedCountry = countriesOptionsRoot.options[countriesOptionsRoot.selectedIndex].text;
-      let holidayCountryNamePlaceHolder = this.#componentRoot.querySelector('h2 .public_holiday_country_name');
-      if (holidayCountryNamePlaceHolder) {
-        holidayCountryNamePlaceHolder.innerHTML = selectedCountry;
+      // Display selected Country and Year in Table Title
+      let countriesOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="country"]');
+      let yearsOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="year"]');
+
+      if (countriesOptionsRoot && countriesOptionsRoot.selectedIndex >= 0) {
+        const selectedCountry = countriesOptionsRoot.options[countriesOptionsRoot.selectedIndex].text;
+        const holidayCountryNamePlaceHolder = this.#componentRoot.querySelector('.public_holiday_country_name');
+        if (holidayCountryNamePlaceHolder) {
+            holidayCountryNamePlaceHolder.textContent = selectedCountry;
+        }
       }
-      // Display selected year in Table Title
-      const yearsOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="year"]');
-      let selectedYear = yearsOptionsRoot.options[yearsOptionsRoot.selectedIndex].text;
-      let holidayYearPlaceHolder = this.#componentRoot.querySelector('h2 .public_holiday_year');
-      if (holidayYearPlaceHolder) {
-        holidayYearPlaceHolder.innerHTML = selectedYear;
+
+      if (yearsOptionsRoot && yearsOptionsRoot.selectedIndex >= 0) {
+        const selectedYear = yearsOptionsRoot.options[yearsOptionsRoot.selectedIndex].text;
+        const holidayYearPlaceHolder = this.#componentRoot.querySelector('.public_holiday_year');
+        if (holidayYearPlaceHolder) {
+            holidayYearPlaceHolder.textContent = selectedYear;
+        }
       }
     }
 
     handleEvent(event) {
-      console.log("handleEvent:", event.target.name, event.target.value, event.target.textContent);
+      console.log("handleEvent:", event.target.name, event.target.value);
 
       switch (event.target.name) {
         case "country":
@@ -163,13 +168,12 @@
     async loadCountries() {
       try {
         if (!this.#dropdownCountries) {
-          const response = await fetch(
-            this.#BASE_API_URL + "AvailableCountries/"
-          );
+          const response = await fetch(this.#BASE_API_URL + "AvailableCountries/");
           if (!response.ok) {
             throw new Error(`HTTPerror:${response.status}`);
           }
           this.#dropdownCountries = await response.json();
+          // this.renderCountries();
           console.log(`Loaded ${this.#dropdownCountries.length} countries`);
         }
       } catch (error) {
