@@ -78,16 +78,16 @@
       <h2>${this.#tableTitle}</h2>
       <div class="public-holiday-country">
             <label>
-                <span class="col-25" hidden data-label>Country</span>
+                <span class="col-25" data-label>Select Country</span>
                 <select class="col-75" name="country">
-                    <option value="">Select a Country</option>`;
+                    <option value="" disabled="true">Select a Country</option>`;
       outputHtml += this.renderCountries();
       outputHtml += `</select>
             </label>
             <label>
-                <span class="col-25" hidden data-label>Year</span>
+                <span class="col-25" data-label>Select Year</span>
                 <select class="col-75" name="year">
-                    <option value="">Select a Year</option>`;
+                    <option value="" disabled="true">Select a Year</option>`;
       outputHtml += this.renderYears();
       outputHtml += `</select>
             </label>
@@ -127,7 +127,22 @@
       }
 
       outputHtml += `</tbody></table></div>`;
-      this.#componentRoot.innerHTML = outputHtml; // Display table with data in selected container (contentContainer)
+      this.#componentRoot.innerHTML = outputHtml; // Display table with data in this.#componentRoot = "#public-holidays-component" selector
+      
+      // Display selected Country Name in Table Title
+      const countriesOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="country"]');
+      let selectedCountry = countriesOptionsRoot.options[countriesOptionsRoot.selectedIndex].text;
+      let holidayCountryNamePlaceHolder = this.#componentRoot.querySelector('h2 .public_holiday_country_name');
+      if (holidayCountryNamePlaceHolder) {
+        holidayCountryNamePlaceHolder.innerHTML = selectedCountry;
+      }
+      // Display selected year in Table Title
+      const yearsOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="year"]');
+      let selectedYear = yearsOptionsRoot.options[yearsOptionsRoot.selectedIndex].text;
+      let holidayYearPlaceHolder = this.#componentRoot.querySelector('h2 .public_holiday_year');
+      if (holidayYearPlaceHolder) {
+        holidayYearPlaceHolder.innerHTML = selectedYear;
+      }
     }
 
     handleEvent(event) {
@@ -188,9 +203,13 @@
 
     renderYears() {
       let dropdownYearsOptionsHtml = "";
+      const defaultYear = parseInt(this.#year); // Convert string to number
       if (this.#dropdownYears) {
         this.#dropdownYears.forEach((year) => {
-          dropdownYearsOptionsHtml += `<option value="${year}" ${this.#year === year ? "selected" : ""}>${year}</option>`;
+          dropdownYearsOptionsHtml += `<option value="${year}" ${defaultYear === year ? "selected" : ""}>${year}</option>`;
+
+          console.log('this.#year', defaultYear);
+          console.log('year', year);
         });
       }
       return dropdownYearsOptionsHtml;
@@ -200,10 +219,11 @@
   function init() {
     // Init PublicHolidaysDataTable
     let holidaysDataTable = null;
+    let holidaysDataTableTitle = "List of Public Holidays for <span class='public_holiday_country_name'></span> <span class='public_holiday_year'>"
     try {
       // Holidays table
       // Build table using an instance of PublicHolidaysDataTable class and set table title: "List of Public Holidays"
-      holidaysDataTable = new PublicHolidaysDataTable("List of Public Holidays");
+      holidaysDataTable = new PublicHolidaysDataTable(holidaysDataTableTitle);
     } catch (err) {
       console.error(err.message);
     }

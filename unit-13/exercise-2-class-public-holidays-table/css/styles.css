@@ -135,13 +135,28 @@ table.greenTable tbody:last-child tr:last-child td:last-child {
 .public-holiday-country {
   padding: 16px 20px;
   border-radius: 8px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   border: 2px solid black;
+}
+
+.public-holiday-country label {
+  position: relative;
+}
+
+.public-holiday-country label span {
+  background-color: white;
+  position: absolute;
+  top: -36px;
+  left: 4px;
+  padding: 0 8px;
+  font-size: 13px;
+  letter-spacing: .4px;
 }
 
 .public-holiday-country select {
   border: none;
   background-color: transparent;
+  font-weight: bold;
   border-radius: 6px;
   font-size: 16px;
   letter-spacing: .4px;
