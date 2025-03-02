@@ -4,10 +4,12 @@
 (() => {
   class PublicHolidaysDataTable {
     // Properties
-    #dataUrl = "https://date.nager.at/api/v3/PublicHolidays/"; // Base URL to REST API
+    #BASE_API_URL = "https://date.nager.at/api/v3/"; // Base URL to REST API
+    #dropdownCountries;
+    #dropdownYears;
     #country = "IE"; // Default country
     #year = "2025"; // Default year
-    #data // Data object returned via fetch()
+    #data; // Data object returned via fetch()
     #tableTitle; // Title text for component
     #componentRoot; // DOM node for component
     #columnNames; // An array of column names to display
@@ -15,8 +17,13 @@
     constructor(tableTitle) {
       this.#tableTitle = tableTitle;
       this.#componentRoot = document.getElementById("public-holidays-component");
+      this.#columnNames = ["date", "localName", "name", "types"];
+      this.loadCountries();
+      this.loadYears();
+      
+      // Load Data after Countries and Years have been loaded
       this.loadData(); // Init fetch() - load data using fetch and build the table
-      this.#columnNames = ['date', 'localName', 'name', 'types'];
+
       // Event handler - to update the table data based on the selected Country and Year
       this.#componentRoot.addEventListener("change", this);
     }
@@ -30,7 +37,7 @@
       try {
         // After this line, our function will wait for the `fetch()` call to be settled
         // The `fetch()` call will either return a Response or throw an error
-        const response = await fetch(this.#dataUrl + this.#year + "/" + this.#country);
+        const response = await fetch(this.#BASE_API_URL + "PublicHolidays/" + this.#year + "/" + this.#country);
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }
@@ -39,7 +46,8 @@
         // After this line, our function will wait for the `response.json()` call to be settled
         // The `response.json()` call will either return the parsed JSON object or throw an error
         this.#data = await response.json(); // Update the #data property with the fetched decoded JSON Data
-        console.log(this.#data);
+        console.log(this.#data[0]);
+        // console.log(this.#data);
         this.render(); // Pass the response(decodedJsonData) to the render() function and update the DOM
       } catch (error) {
         console.error(`Could not get data: ${error}`);
@@ -58,33 +66,30 @@
         return;
       }
 
-      console.log('Render this data: ', this.#data);
-      console.log('Table Title: ' + this.#tableTitle);
+      console.log("Render this data: ", this.#data);
+      console.log("Table Title: " + this.#tableTitle);
       // Get the property names of the first object in the data array
       const objPropertyNamesHeaders = Object.getOwnPropertyNames(this.#data[0]);
       const colNames = this.#columnNames;
+      // console.log("this.#dropdownCountries", this.#dropdownCountries);
 
-      // Create table with json data object {property:value} 
+      // Create table with json data object {property:value}
       let outputHtml = `
       <h2>${this.#tableTitle}</h2>
       <div class="public-holiday-country">
             <label>
                 <span class="col-25" hidden data-label>Country</span>
                 <select class="col-75" name="country">
-                    <option value="">Select a Country</option>
-                    <option value="IE">Ireland</option>
-                    <option value="FR">France</option>
-                    <option value="ES">Spain</option>
-                </select>
+                    <option value="">Select a Country</option>`;
+      outputHtml += this.renderCountries();
+      outputHtml += `</select>
             </label>
             <label>
                 <span class="col-25" hidden data-label>Year</span>
                 <select class="col-75" name="year">
-                    <option value="">Select a Year</option>
-                    <option value="2025">2025</option>
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                </select>
+                    <option value="">Select a Year</option>`;
+      outputHtml += this.renderYears();
+      outputHtml += `</select>
             </label>
         </div>
         <div class="table-container">
@@ -109,13 +114,12 @@
 
         let tableRow = "<tr>";
         for (let header in objPropertyNamesHeaders) {
-          if (colNames.includes(objPropertyNamesHeaders[header])) { 
+          if (colNames.includes(objPropertyNamesHeaders[header])) {
             let tableColumnName = objPropertyNamesHeaders[header];
             // console.log("Table Header Name: ", tableColumnName);
-  
+
             tableRow += `<td class="item_${tableColumnName}">${String(tableItem[tableColumnName]) || ""}</td>`;
           }
-          
         }
         tableRow += "</tr>";
 
@@ -127,19 +131,70 @@
     }
 
     handleEvent(event) {
-      console.log("handleEvent:", event.target.name, event.target.value);
+      console.log("handleEvent:", event.target.name, event.target.value, event.target.textContent);
 
-      switch(event.target.name) {
-          case "country":
-              this.#country = event.target.value;
-              break;
-          case "year":
-              this.#year = event.target.value;
-              break;
-          default: // default (country: IE, year: 2025)
+      switch (event.target.name) {
+        case "country":
+          this.#country = event.target.value;
+          break;
+        case "year":
+          this.#year = parseInt(event.target.value); // Convert to number(integer)
+          break;
+        default: // default (country: IE, year: 2025)
       }
       this.loadData();
-  }
+    }
+
+    async loadCountries() {
+      try {
+        if (!this.#dropdownCountries) {
+          const response = await fetch(
+            this.#BASE_API_URL + "AvailableCountries/"
+          );
+          if (!response.ok) {
+            throw new Error(`HTTPerror:${response.status}`);
+          }
+          this.#dropdownCountries = await response.json();
+          console.log(`Loaded ${this.#dropdownCountries.length} countries`);
+        }
+      } catch (error) {
+        console.error(`Could not get the countries data: ${error}`);
+      }
+      return "";
+    }
+
+    renderCountries() {
+      const countriesOptionsRoot = this.#componentRoot.querySelector('.public-holiday-country select[name="country"]');
+      console.log("renderCountries");
+      console.log(this.#dropdownCountries);
+      let dropdownCountriesOptionsHtml = "";
+      if (this.#dropdownCountries) {
+        this.#dropdownCountries.forEach((country) => {
+          dropdownCountriesOptionsHtml += `<option value="${country.countryCode}" ${this.#country === country.countryCode ? "selected" : ""}>${country.name}</option>`;
+        });
+      }
+      return dropdownCountriesOptionsHtml;
+    }
+
+    loadYears() {
+      const currYear = parseInt(new Date().getFullYear());
+      const dropdownYears = [currYear];
+      for (let i = 1; i < 10; i++) {
+        dropdownYears.push(currYear + i);
+      }
+      this.#dropdownYears = dropdownYears;
+      console.log(this.#dropdownYears);
+    }
+
+    renderYears() {
+      let dropdownYearsOptionsHtml = "";
+      if (this.#dropdownYears) {
+        this.#dropdownYears.forEach((year) => {
+          dropdownYearsOptionsHtml += `<option value="${year}" ${this.#year === year ? "selected" : ""}>${year}</option>`;
+        });
+      }
+      return dropdownYearsOptionsHtml;
+    }
   } // END Class: PublicHolidaysDataTable
 
   function init() {
@@ -148,8 +203,8 @@
     try {
       // Holidays table
       // Build table using an instance of PublicHolidaysDataTable class and set table title: "List of Public Holidays"
-      holidaysDataTable = new PublicHolidaysDataTable('List of Public Holidays');
-    } catch(err) {
+      holidaysDataTable = new PublicHolidaysDataTable("List of Public Holidays");
+    } catch (err) {
       console.error(err.message);
     }
   }
