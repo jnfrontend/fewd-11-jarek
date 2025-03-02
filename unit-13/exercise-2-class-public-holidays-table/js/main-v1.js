@@ -154,7 +154,7 @@ class PublicHolidaysDataTable {
         let dropdownYearsOptionsHtml = '';
         if (this.#dropdownYears) {
             this.#dropdownYears.forEach(year => {
-                dropdownYearsOptionsHtml += `<option value="${year}" ${(this.#year === year) ? 'selected' : ''}>${year}</option>`;
+                dropdownYearsOptionsHtml += `<option value="${year}" ${(parseInt(this.#year) === year) ? 'selected' : ''}>${year}</option>`;
             });
         }
         return dropdownYearsOptionsHtml;
