@@ -141,24 +141,30 @@ div#ranking_tables h2 {
 }
 
 /* Super Heroes Cards */
+div#super_heroes.container .row .card,
 div#superheroes .card_container {
   box-shadow: 0px 6px 10px 0 rgba(0, 0, 0, 0.05);
   position: relative;
   border-radius: 8px;
   background-color: #f0f2f3;
   transition: 0.25s ease-out 0.05s;
+  border: none;
   padding: 0;
   z-index: 0;
 }
 
+div#super_heroes.container .row .card:hover,
+div#super_heroes.container .row .card:focus,
 div#superheroes .card_container:hover, 
 div#superheroes .card_container:focus {
   background: linear-gradient(0deg, rgba(0, 116, 232, 1) 35%, rgba(240, 242, 243, 1) 100%);
   box-shadow: 0 0 0 3px rgb(0, 116, 232), 0px 10px 50px 10px rgb(0, 116, 232, 0.1);
   transform: translateY(-5px);
   transition: 0.25s ease-in 0.15s;
+  cursor: pointer;
 }
 
+div#super_heroes.container::after,
 div#superheroes .card_container::after {
   content: "";
   position: absolute;
@@ -176,6 +182,7 @@ div#superheroes .card_container .card_hero {
   border-radius: 8px 8px 0 0;
 }
 
+div#super_heroes.container .row .card img,
 div#superheroes .card_container .card_hero .card_hero_img {
   filter: grayscale(0.2);
   border-radius: 8px 8px 0 0;
@@ -187,7 +194,7 @@ div#superheroes .card_container .card_hero .card_hero_img {
   mask-position: 0;
   transition: all 0s ease 0.05s;
 }
-
+div#super_heroes.container .row .card:hover img,
 div#superheroes .card_container:hover .card_hero .card_hero_img {
   animation: animate-hero 1.2s alternate ease-in-out infinite 0.42s;
   transition: all 1.35s ease 0.15s;
@@ -197,6 +204,7 @@ div#superheroes .card_container:hover .card_hero .card_hero_img {
   opacity: 1;
 }
 
+div#super_heroes.container .row .card .card-body h5.card-title,
 div#superheroes .card_container .card_hero .card_hero_name {
   transition: color .25s ease 0.1s;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -208,10 +216,12 @@ div#superheroes .card_container .card_hero .card_hero_name {
   padding: 20px 30px;
 }
 
+div#super_heroes.container .row .card:hover h5.card-title,
 div#superheroes .card_container:hover .card_hero_name {
   color: rgb(0, 116, 232);
 }
 
+div#super_heroes.container .row .card .card-body,
 div#superheroes .card_container .card_content {
   background-color: white;
   border-radius: 0 0 8px 8px;
@@ -220,6 +230,7 @@ div#superheroes .card_container .card_content {
   min-height: 110px;
 }
 
+div#super_heroes.container .row .card .card-body p.card-text,
 div#superheroes .card_container .card_content p {
   font-size: 13px;
   letter-spacing: 0.4px;

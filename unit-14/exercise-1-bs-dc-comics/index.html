@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DC Comics</title>
+    <title>Unit 14 (Exercise 1) - Bootstrap DC Comics</title>
+    <!-- Stylesheets -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom Bootstrap -->
+     <link rel="stylesheet" href="css/dc-custom-bootstrap.css">
+
+    <!-- Main DC Comics -->
     <link rel="stylesheet" href="css/dc-main-styles.css" />
     <!-- <link rel="stylesheet" href="/unit-5/dc-comics/css/dc-basic-layout.css" /> -->
     <!-- <link rel="stylesheet" href="/unit-5/dc-comics/css/dc-flexbox-layout.css" /> -->
@@ -28,71 +35,89 @@
     <main>
       <!--Section-->
       <section>
-        <!--First Row-->
-        <div id="superheroes" class="row">
-          <!--Hero1-->
-          <div class="card_container">
-            <div class="card_hero">
-              <img class="card_hero_img" src="images/v2/flash.png" />
-              <h2 class="card_hero_name">The Flash</h2>
-            </div>
-            <div class="card_content">
-              <p>
-                Able to run at near light-speeds, his powers provide the
-                ultimate caffeine kick: He can run up buildings, move so swiftly
-                he phases through objects, create sonic booms with the snap of
-                his fingers. <br /><br />
-              </p>
+        <div id="super_heroes" class="container pt-5">
+          <div class="row">
+            <!-- Hero 1 -->
+            <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+              <div class="card flex-fill">
+                <img
+                  src="images/v2/flash.png"
+                  class="card-img-top"
+                  alt="Marvel Card Image"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title">The Flash</h5>
+                  <p class="card-text">
+                    Able to run at near light-speeds, his powers provide the
+                    ultimate caffeine kick: He can run up buildings, move so swiftly
+                    he phases through objects, create sonic booms with the snap of
+                    his fingers.
+                  </p>
+                </div>
+              </div>
+          </div>
+          <!-- Hero 2 -->
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+            <div class="card flex-fill">
+              <img
+                src="images/v2/wonderwoman.png"
+                class="card-img-top"
+                alt="Marvel Card Image"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Wonder Woman</h5>
+                <p class="card-text">
+                  Wonder Woman is Princess Diana of the immortal Amazons from
+                  Greek mythology. Wonder Woman has superhuman strength and speed,
+                  as well as the trademark bulletproof bracelets, but it’s
+                  probably her Golden Lasso of Truth most people really wish they
+                  had.
+                </p>
+              </div>
             </div>
           </div>
-          <!--Hero2-->
-          <div class="card_container">
-            <div class="card_hero">
-              <img class="card_hero_img" src="images/v2/wonderwoman.png" />
-              <h2 class="card_hero_name">Wonder Woman</h2>
-            </div>
-            <div class="card_content">
-              <p>
-                Wonder Woman is Princess Diana of the immortal Amazons from
-                Greek mythology. Wonder Woman has superhuman strength and speed,
-                as well as the trademark bulletproof bracelets, but it’s
-                probably her Golden Lasso of Truth most people really wish they
-                had.
-              </p>
-            </div>
-          </div>
-          <!--Hero3-->
-          <div class="card_container">
-            <div class="card_hero">
-              <img class="card_hero_img" src="images/v2/superman.png" />
-              <h2 class="card_hero_name">Superman</h2>
-            </div>
-            <div class="card_content">
-              <p>
-                Superman has super strength, speed, flight, invulnerability as
-                well as his renowned X-ray and heat vision. The most powerful
-                being on the planet, his amazing abilities are also a melancholy
-                reminder of how different he is from the people he’s dedicated
-                to protect.
-              </p>
+          <!-- Hero 3 -->
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+            <div class="card flex-fill">
+              <img
+                src="images/v2/superman.png"
+                class="card-img-top"
+                alt="Marvel Card Image"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Superman</h5>
+                <p class="card-text">
+                  Superman has super strength, speed, flight, invulnerability as
+                  well as his renowned X-ray and heat vision. The most powerful
+                  being on the planet, his amazing abilities are also a melancholy
+                  reminder of how different he is from the people he’s dedicated
+                  to protect.
+                </p>
+              </div>
             </div>
           </div>
-          <!--Hero4-->
-          <div class="card_container">
-            <div class="card_hero">
-              <img class="card_hero_img" src="images/v2/Zatanna.png" />
-              <h2 class="card_hero_name">Zatanna</h2>
-            </div>
-            <div class="card_content">
-              <p>
-                Intelligent, confident, self-assured and able to manipulate
-                reality itself with her vast magical abilities, Zatanna balances
-                her time as a skilled stage illusionist with battling the dark
-                arts alongside some of the world’s greatest super heroes.
-              </p>
+          <!-- Hero 4 -->
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+            <div class="card flex-fill">
+              <img
+                src="images/v2/zatanna.png"
+                class="card-img-top"
+                alt="Marvel Card Image"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Zatanna</h5>
+                <p class="card-text">
+                  Intelligent, confident, self-assured and able to manipulate
+                  reality itself with her vast magical abilities, Zatanna balances
+                  her time as a skilled stage illusionist with battling the dark
+                  arts alongside some of the world’s greatest super heroes.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+
+      
         <!--Second Row-->
         <h2 class="section_title">TOP 5 RANKING</h2>
         <div id="ranking_tables" class="row">
