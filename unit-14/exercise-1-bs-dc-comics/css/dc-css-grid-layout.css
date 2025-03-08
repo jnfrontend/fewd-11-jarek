@@ -24,9 +24,9 @@ div#superheroes {
   grid-template-columns: repeat(4, 1fr);
 }
 
-div#ranking_tables {
+/* div#ranking_tables {
   grid-template-columns: repeat(2, 1fr);
-}
+} */
 
 /* Responsive */
 @media (max-width: 1024px) {

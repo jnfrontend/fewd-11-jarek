@@ -244,6 +244,7 @@ div#ranking_tables {
   padding: 50px 0 60px 0;
 }
 
+div#ranking_tables .table_wrapp,
 div#ranking_tables .table_container {
   padding: 15px 30px 30px 30px;
   background-color: #f3f3f3;
@@ -265,7 +266,7 @@ div#ranking_tables table tr {
   background-color: white;
 }
 
-div#ranking_tables table tr th {
+div#ranking_tables table thead tr th {
   background-color: #235384;
   font-weight: bold;
   text-align: left;
@@ -368,10 +369,13 @@ footer small {
   div#superheroes .card_container .card_content {
     min-height: auto;
   }
+  div#ranking_tables .table_wrapp,
   div#ranking_tables .table_container {
+    background-color: unset;
     padding: 0;
   }
   div#ranking_tables h2 {
+    background-color: #f3f3f3;
     border: 1px solid #d9dfe2;
     border-radius: 8px 8px 0 0;
     margin-left: 1px;
