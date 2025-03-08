@@ -70,7 +70,7 @@ div#ranking_tables h2 {
 }
 
 #super_heroes h1 {
-  padding: 0px 20px 50px 20px;
+  padding-bottom: 50px;
 }
 
 /* Header and Navigation */
@@ -83,12 +83,9 @@ nav {
   z-index: 2;
 }
 
-
-/* nav .navbar, */
 nav ul,
 nav ul li {
   background-color: #235384 !important;
-  text-align: center;
 }
 
 nav ul li:nth-child(2) {
@@ -96,8 +93,7 @@ nav ul li:nth-child(2) {
   border-left: 1px solid #567494;
 }
 
-nav.navbar ul li a.nav-link,
-nav ul li a {
+nav.navbar ul li a.nav-link {
   color: white;
   font-size: 14px;
   text-decoration: none;
@@ -117,35 +113,14 @@ section#banner {
   margin-top: 45px;
   z-index: 1;
   height: 550px;
-  background-image: url("/unit-5/dc-comics/images/DC.png");
+  background-image: url("../images/DC.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-/* Super Heroes */
-div#superheroes {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-}
-
-div#superheroes h2,
-div#ranking_tables h2 {
-  text-align: center;
-}
-
-div#ranking_tables h2 {
-  margin-bottom: 10px;
-  padding: 12px;
-  color: #235384;
-  font-weight: 500;
-  font-size: 27.5px;
-}
-
 /* Super Heroes Cards */
-div#super_heroes.container .row .card,
-div#superheroes .card_container {
+div#super_heroes.container .row .card {
   box-shadow: 0px 6px 10px 0 rgba(0, 0, 0, 0.05);
   position: relative;
   border-radius: 8px;
@@ -157,9 +132,7 @@ div#superheroes .card_container {
 }
 
 div#super_heroes.container .row .card:hover,
-div#super_heroes.container .row .card:focus,
-div#superheroes .card_container:hover, 
-div#superheroes .card_container:focus {
+div#super_heroes.container .row .card:focus {
   background: linear-gradient(0deg, rgba(0, 116, 232, 1) 35%, rgba(240, 242, 243, 1) 100%);
   box-shadow: 0 0 0 3px rgb(0, 116, 232), 0px 10px 50px 10px rgb(0, 116, 232, 0.1);
   transform: translateY(-5px);
@@ -167,8 +140,7 @@ div#superheroes .card_container:focus {
   cursor: pointer;
 }
 
-div#super_heroes.container::after,
-div#superheroes .card_container::after {
+div#super_heroes.container::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -180,13 +152,7 @@ div#superheroes .card_container::after {
   z-index: -1;
 }
 
-div#superheroes .card_container .card_hero {
-  overflow: hidden;
-  border-radius: 8px 8px 0 0;
-}
-
-div#super_heroes.container .row .card img,
-div#superheroes .card_container .card_hero .card_hero_img {
+div#super_heroes.container .row .card img {
   filter: grayscale(0.2);
   border-radius: 8px 8px 0 0;
   -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
@@ -197,8 +163,7 @@ div#superheroes .card_container .card_hero .card_hero_img {
   mask-position: 0;
   transition: all 0s ease 0.05s;
 }
-div#super_heroes.container .row .card:hover img,
-div#superheroes .card_container:hover .card_hero .card_hero_img {
+div#super_heroes.container .row .card:hover img {
   animation: animate-hero 1.2s alternate ease-in-out infinite 0.42s;
   transition: all 1.35s ease 0.15s;
   -webkit-mask-position: -120%;
@@ -207,8 +172,7 @@ div#superheroes .card_container:hover .card_hero .card_hero_img {
   opacity: 1;
 }
 
-div#super_heroes.container .row .card .card-body h5.card-title,
-div#superheroes .card_container .card_hero .card_hero_name {
+div#super_heroes.container .row .card .card-body h5.card-title {
   transition: color .25s ease 0.1s;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: white;
@@ -219,13 +183,11 @@ div#superheroes .card_container .card_hero .card_hero_name {
   padding: 20px 30px;
 }
 
-div#super_heroes.container .row .card:hover h5.card-title,
-div#superheroes .card_container:hover .card_hero_name {
+div#super_heroes.container .row .card:hover h5.card-title{
   color: rgb(0, 116, 232);
 }
 
-div#super_heroes.container .row .card .card-body,
-div#superheroes .card_container .card_content {
+div#super_heroes.container .row .card .card-body {
   background-color: white;
   border-radius: 0 0 8px 8px;
   display: block;
@@ -233,8 +195,7 @@ div#superheroes .card_container .card_content {
   min-height: 110px;
 }
 
-div#super_heroes.container .row .card .card-body p.card-text,
-div#superheroes .card_container .card_content p {
+div#super_heroes.container .row .card .card-body p.card-text{
   font-size: 13px;
   letter-spacing: 0.4px;
   line-height: 18px;
@@ -247,8 +208,15 @@ div#ranking_tables {
   padding: 50px 0 60px 0;
 }
 
-div#ranking_tables .table_wrapp,
-div#ranking_tables .table_container {
+div#ranking_tables h2 {
+  margin-bottom: 10px;
+  padding: 12px;
+  color: #235384;
+  font-weight: 500;
+  font-size: 27.5px;
+}
+
+div#ranking_tables .table_wrapp {
   padding: 15px 30px 30px 30px;
   background-color: #f3f3f3;
   border-radius: 8px;
@@ -310,12 +278,10 @@ footer {
 }
 
 footer h3 {
-  text-transform: uppercase;
   letter-spacing: -0.2px;
 }
 
 footer p {
-  text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.4px;
   margin-top: 5px;
@@ -333,13 +299,6 @@ footer small {
 }
 
 /* Other */
-.txt-l {
-  text-align: left;
-}
-.txt-c {
-  text-align: center;
-}
-  
 .row::after {
   content: "";
   display: table;
@@ -356,12 +315,6 @@ footer small {
 }
 
 /* Responsive */
-@media screen and (min-width: 1025px) {
-  div#superheroes .card_container {
-    min-height: 625px;
-  }
-}
-
 @media (max-width: 1024px) {
   div#ranking_tables {
     padding: 50px 0 30px 0;
@@ -369,11 +322,7 @@ footer small {
 }
 
 @media (max-width: 768px) {
-  div#superheroes .card_container .card_content {
-    min-height: auto;
-  }
-  div#ranking_tables .table_wrapp,
-  div#ranking_tables .table_container {
+  div#ranking_tables .table_wrapp {
     background-color: unset;
     padding: 0;
   }
