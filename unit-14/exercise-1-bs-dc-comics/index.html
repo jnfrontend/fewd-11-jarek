@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/dc-css-grid-layout.css" />
   </head>
   <body>
-    <header>
+    <header class="container-fluid m-0 p-0">
       <!--Navbar-->
       <nav class="navbar navbar-expand p-0">
         <div class="container-fluid p-0">
@@ -37,7 +37,7 @@
         </div>
       </nav>
       <!--Hero Banner Section-->
-      <section id="banner"></section>
+      <section id="banner" class="container-fluid m-0 p-0"></section>
     </header>
 
     <!--Main Content-->
@@ -223,10 +223,16 @@
 
     <!--Footer-->
     <footer>
-      <h3>Student Details</h3>
-      <p>Name: Jarek <span>|</span> UCD: FEWD1124</p>
-      <br />
-      <small>© Copyright 2024-2025 Jarek, All rights reserved.</small>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-12">
+                <h3>Student Details</h3>
+                <p>Name: Jarek <span>|</span> UCD: FEWD1124</p>
+                <br />
+                <small>© Copyright 2024-2025 Jarek, All rights reserved.</small>
+              </div>
+          </div>
+      </div>
     </footer>
   </body>
 </html>
