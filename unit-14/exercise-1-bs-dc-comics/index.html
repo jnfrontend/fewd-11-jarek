@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 14 (Exercise 1) - Bootstrap DC Comics</title>
+    <!-- Stylesheets -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom Bootstrap -->
+    <link rel="stylesheet" href="css/dc-custom-bootstrap.css">
+    <!-- Main DC Comics -->
+    <link rel="stylesheet" href="css/dc-main-styles.css" />
+  </head>
+  <body>
+    <header class="container-fluid m-0 p-0">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand p-0">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 m-0 w-100">
+              <li class="nav-item col-4">
+                <a class="nav-link text-center" href="https://www.dccomics.com/movies">Movies</a>
+              </li>
+              <li class="nav-item col-4">
+                <a class="nav-link text-center" href="https://www.dccomics.com/characters">Characters</a>
+              </li>
+              <li class="nav-item col-4">
+                <a class="nav-link text-center" href="https://www.dccomics.com/comics">Comics</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Hero Banner Section-->
+      <section id="banner" class="container-fluid p-0"></section>
+    </header>
+
+    <!--Main Content-->
+    <main>
+      <!--Section-->
+      <section>
+        <div id="super_heroes" class="container pt-5">
+          <h1>DC SUPER HEROSES</h1>
+          <div class="row">
+            <!-- Hero 1 -->
+            <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+              <div class="card flex-fill">
+                <div class="ratio ratio-3x4">
+                <img
+                  src="images/v2/flash.png"
+                  class="img-fluid"
+                  alt="Marvel Card Image"
+                />
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title">The Flash</h5>
+                  <p class="card-text">
+                    Able to run at near light-speeds, his powers provide the
+                    ultimate caffeine kick: He can run up buildings, move so swiftly
+                    he phases through objects, create sonic booms with the snap of
+                    his fingers.
+                  </p>
+                </div>
+              </div>
+          </div>
+          <!-- Hero 2 -->
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+            <div class="card flex-fill">
+              <div class="ratio ratio-3x4">
+              <img
+                src="images/v2/wonderwoman.png"
+                class="img-fluid"
+                alt="Marvel Card Image"
+              />
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Wonder Woman</h5>
+                <p class="card-text">
+                  Wonder Woman is Princess Diana of the immortal Amazons from
+                  Greek mythology. Wonder Woman has superhuman strength and speed,
+                  as well as the trademark bulletproof bracelets, but it’s
+                  probably her Golden Lasso of Truth most people really wish they
+                  had.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero 3 -->
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+            <div class="card flex-fill">
+              <div class="ratio ratio-3x4">
+              <img
+                src="images/v2/superman.png"
+                class="img-fluid"
+                alt="Marvel Card Image"
+              />
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Superman</h5>
+                <p class="card-text">
+                  Superman has super strength, speed, flight, invulnerability as
+                  well as his renowned X-ray and heat vision. The most powerful
+                  being on the planet, his amazing abilities are also a melancholy
+                  reminder of how different he is from the people he’s dedicated
+                  to protect.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero 4 -->
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+            <div class="card flex-fill">
+              <div class="ratio ratio-3x4">
+              <img
+                src="images/v2/zatanna.png"
+                class="img-fluid"
+                alt="Marvel Card Image"
+              />
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Zatanna</h5>
+                <p class="card-text">
+                  Intelligent, confident, self-assured and able to manipulate
+                  reality itself with her vast magical abilities, Zatanna balances
+                  her time as a skilled stage illusionist with battling the dark
+                  arts alongside some of the world’s greatest super heroes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+        <!-- Ranking Tables -->
+        <h2 class="section_title pt-4">TOP 5 RANKING</h2>
+        <div id="ranking_tables" class="container">
+          <div class="row">
+            <!-- DC Villians Table -->
+            <div class="col-sm-12 col-md-6 d-grid">
+              <div class="table_wrapp">
+                <h2 class="ranking_title text-center">DC Villians</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Character</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td colspan="2">Brainiac</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td colspan="2">Sinestro</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Darkseid</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+            <!-- DC Movies Table -->
+            <div class="col-sm-12 col-md-6 d-grid">
+              <div class="table_wrapp">
+                <h2 class="ranking_title text-center">DC Movies</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Gross</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>The Dark Knight</td>
+                    <td>$533,345,358</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Wonder Woman</td>
+                    <td>$412,563,408</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Batman v Superman: Dawn of Justice</td>
+                    <td>$330,360,194</tr>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Suicide Squad</td>
+                    <td>$325,100,054</tr>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Man of Steel</td>
+                    <td>$291,045,518</tr>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-12">
+                <h3 class="fw-bold fs-5 text-uppercase">Student Details</h3>
+                <p class="text-uppercase">Name: Jarek <span>|</span> UCD: FEWD1124</p>
+                <br />
+                <small>© Copyright 2024-2025 Jarek, All rights reserved.</small>
+              </div>
+          </div>
+      </div>
+    </footer>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> -->
+  </body>
+</html>
