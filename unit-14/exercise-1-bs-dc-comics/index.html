@@ -19,16 +19,25 @@
   <body>
     <header>
       <!--Navbar-->
-      <nav>
-        <ul>
-          <li><a href="https://www.dccomics.com/movies">Movies</a></li>
-          <li><a href="https://www.dccomics.com/characters">Characters</a></li>
-          <li><a href="https://www.dccomics.com/comics">Comics</a></li>
-        </ul>
+      <nav class="navbar navbar-expand p-0">
+        <div class="container-fluid p-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 m-0 w-100">
+              <li class="nav-item col-4">
+                <a class="nav-link" href="https://www.dccomics.com/movies">Movies</a>
+              </li>
+              <li class="nav-item col-4">
+                <a class="nav-link" href="https://www.dccomics.com/characters">Characters</a>
+              </li>
+              <li class="nav-item col-4">
+                <a class="nav-link" href="https://www.dccomics.com/comics">Comics</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
       <!--Hero Banner Section-->
       <section id="banner"></section>
-      <h1>DC SUPER HEROSES</h1>
     </header>
 
     <!--Main Content-->
@@ -36,6 +45,7 @@
       <!--Section-->
       <section>
         <div id="super_heroes" class="container pt-5">
+          <h1>DC SUPER HEROSES</h1>
           <div class="row">
             <!-- Hero 1 -->
             <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
@@ -130,7 +140,7 @@
         <h2 class="section_title pt-4">TOP 5 RANKING</h2>
         <div id="ranking_tables" class="container">
           <div class="row">
-            <div class="col-sm-12 col-md-6 d-grid gap-5">
+            <div class="col-sm-12 col-md-6 d-grid">
               <div class="table_wrapp">
                 <h2 class="ranking_title">DC Villians</h2>
               <table class="table">
@@ -165,7 +175,7 @@
               </table>
               </div>
             </div>
-            <div class="col-sm-12 col-md-6 d-grid gap-5">
+            <div class="col-sm-12 col-md-6 d-grid">
               <div class="table_wrapp">
                 <h2 class="ranking_title">DC Movies</h2>
               <table class="table">

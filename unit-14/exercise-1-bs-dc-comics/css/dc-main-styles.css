@@ -37,7 +37,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
   
-header h1,
+h1,
 .section_title,
 div#ranking_tables h2 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
@@ -58,7 +58,7 @@ section {
   background-color: white;
 }
 
-header h1,
+h1,
 .section_title {
   background: white;
   font-size: 48px;
@@ -69,13 +69,13 @@ div#ranking_tables h2 {
   letter-spacing: 0.8px;
 }
 
-/* Header and Navigation */
-header h1 {
-  padding: 50px 20px 0px 20px;
+#super_heroes h1 {
+  padding: 0px 20px 50px 20px;
 }
 
+/* Header and Navigation */
 nav {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   width: 100%;
   left: 0;
@@ -83,9 +83,11 @@ nav {
   z-index: 2;
 }
 
+
+/* nav .navbar, */
 nav ul,
 nav ul li {
-  background-color: #235384;
+  background-color: #235384 !important;
   text-align: center;
 }
 
@@ -94,6 +96,7 @@ nav ul li:nth-child(2) {
   border-left: 1px solid #567494;
 }
 
+nav.navbar ul li a.nav-link,
 nav ul li a {
   color: white;
   font-size: 14px;
@@ -385,7 +388,7 @@ footer small {
   div#ranking_tables table {
     border-radius: 0 0 8px 8px;
   }
-  header h1,
+  #super_heroes h1,
   .section_title  {
     text-align: center;
   }
@@ -395,7 +398,7 @@ footer small {
 }
 
 @media (max-width: 480px) { 
-  header h1,
+  #super_heroes h1,
   .section_title  {
     font-size: 42px;
   }
