@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 14 (Exercise 3) Bootstrap - Simple TODO List</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h3>Unit 14</h3>
+      <h1>Exercise 3 - Bootstrap Simple TODO List</h1>
+    </header>
+    <hr />
+    <section class="component-simple-to-do-list">
+      <div class="container component-simple-to-do-list__items">
+        <h3>My List</h3>
+        <table>
+          <thead>
+            <!-- Title -->
+            <th>Title</th>
+            <!-- Description -->
+            <th>Description</th>
+            <!-- Priority -->
+            <th>Priority</th>
+            <th></th>
+          </thead>
+          <tbody id="to-do-items-container">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container component-simple-to-do-list__form">
+        <h3>Add to the list</h3>
+        <form id="to-do-list-form">
+          <div class="row">
+            <div class="col-100">
+              <!-- <label for="title">Title</label> -->
+              <input type="text" id="title" name="title" placeholder="Title" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-100">
+              <!-- <label for="description">Description...</label> -->
+              <textarea id="description" name="description" placeholder="Description" rows="5" required></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-100">
+              <select id="priority" name="priority" required>
+                <option value="" selected disabled hidden>Please select priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <input id="submit" type="submit" value="Add Item" class="btn">
+
+            <!-- According to Mozilla's dev center any control holding the name or id "reset" will mask the form.reset() function --- "toDoListForm.reset();" -->
+            <!-- <input id="reset" type="reset" value="Clear" class="btn"></input> -->
+          </div>
+          </form>
+      </div>
+    </section>
+    <script src="js/main.js"></script>
+  </body>
+</html>
