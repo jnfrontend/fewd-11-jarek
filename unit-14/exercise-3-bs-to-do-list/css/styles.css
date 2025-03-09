@@ -126,8 +126,8 @@ input[type="submit"]:hover {
 .header,
 .container {
   /* max-width: 1024px; */
-  max-width: 600px;
-  margin: auto;
+  /* max-width: 600px;
+  margin: auto; */
 }
 
 .component-simple-to-do-list {

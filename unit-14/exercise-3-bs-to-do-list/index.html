@@ -29,40 +29,61 @@
           <tbody id="to-do-items-container">
           </tbody>
         </table>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add Item
+        </button>
       </div>
 
-      <div class="container component-simple-to-do-list__form">
-        <h3>Add to the list</h3>
-        <form id="to-do-list-form">
-          <div class="row">
-            <div class="col-100">
-              <!-- <label for="title">Title</label> -->
-              <input type="text" id="title" name="title" placeholder="Title" required>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Add TO-DO Item</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container component-simple-to-do-list__form">
+                <h3>Add to the list</h3>
+                <form id="to-do-list-form">
+                  <div class="row">
+                    <div class="col-100">
+                      <!-- <label for="title">Title</label> -->
+                      <input type="text" id="title" name="title" placeholder="Title" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-100">
+                      <!-- <label for="description">Description...</label> -->
+                      <textarea id="description" name="description" placeholder="Description" rows="5" required></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-100">
+                      <select id="priority" name="priority" required>
+                        <option value="" selected disabled hidden>Please select priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <input id="submit" type="submit" value="Add Item" class="btn">
+        
+                    <!-- According to Mozilla's dev center any control holding the name or id "reset" will mask the form.reset() function --- "toDoListForm.reset();" -->
+                    <!-- <input id="reset" type="reset" value="Clear" class="btn"></input> -->
+                  </div>
+                  </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
-          <div class="row">
-            <div class="col-100">
-              <!-- <label for="description">Description...</label> -->
-              <textarea id="description" name="description" placeholder="Description" rows="5" required></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-100">
-              <select id="priority" name="priority" required>
-                <option value="" selected disabled hidden>Please select priority</option>
-                <option value="High">High</option>
-                <option value="Medium">Medium</option>
-                <option value="Low">Low</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <input id="submit" type="submit" value="Add Item" class="btn">
-
-            <!-- According to Mozilla's dev center any control holding the name or id "reset" will mask the form.reset() function --- "toDoListForm.reset();" -->
-            <!-- <input id="reset" type="reset" value="Clear" class="btn"></input> -->
-          </div>
-          </form>
+        </div>
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
