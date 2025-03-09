@@ -21,9 +21,9 @@
 |<p align="center">11.</p>|&#x2611; JavaScript - Modifying the Document Object Model (DOM)|<p align="center">Done</p>|<p align="center">[Unit-9](https://github.com/jnfrontend/fewd-11-jarek/pull/12)</p>|
 |<p align="center">12.</p>|&#x2611; Dynamic HTML|<p align="center">Done</p>|<p align="center">[Unit-10](https://github.com/jnfrontend/fewd-11-jarek/pull/13)</p>|
 |<p align="center">13.</p>|&#x2611; Web Forms - Working with User Data|<p align="center">Done</p>|<p align="center">[Unit-11](https://github.com/jnfrontend/fewd-11-jarek/pull/21)</p>|
-|<p align="center">14.</p>|&#x2610; JavaScript - Advanced|<p align="center">In progress...</p>|<p align="center">[Unit-12](https://github.com/jnfrontend/fewd-11-jarek/pull/26)</p>|
-|<p align="center">15.</p>|&#x2610; Building a Web Application with JavaScript|<p align="center"></p>|<p align="center"></p>|
-|<p align="center">16.</p>|&#x2610; Introduction to CSS Frameworks - Bootstrap|<p align="center"></p>|<p align="center"></p>|
+|<p align="center">14.</p>|&#x2611; JavaScript - Advanced|<p align="center">Done</p>|<p align="center">[Unit-12](https://github.com/jnfrontend/fewd-11-jarek/pull/26)</p>|
+|<p align="center">15.</p>|&#x2611; Building a Web Application with JavaScript|<p align="center">Done</p>|<p align="center">[Unit-13](https://github.com/jnfrontend/fewd-11-jarek/pull/31)</p>|
+|<p align="center">16.</p>|&#x2611; Introduction to CSS Frameworks - Bootstrap|<p align="center">Done</p>|<p align="center">[Unit-14](https://github.com/jnfrontend/fewd-11-jarek/pull/36)</p>|
 |<p align="center">17.</p>|&#x2610; Other Frameworks, SEO, Web Security, Performance|<p align="center"></p>|<p align="center"></p>|
 
 # Final Project ⏰
