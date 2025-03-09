@@ -43,9 +43,9 @@
           break;
         case "edit":
           const rowToUpdate = toDoList.querySelector('#' + toDoItem.itemId);
-          rowToUpdate.querySelector('td[data-field="title"').innerHTML = toDoItem['title'];
-          rowToUpdate.querySelector('td[data-field="description"').innerHTML = toDoItem['description'];
-          rowToUpdate.querySelector('td[data-field="priority"').innerHTML = toDoItem['priority'];
+          rowToUpdate.querySelector('td[data-field="title"]').innerHTML = toDoItem['title'];
+          rowToUpdate.querySelector('td[data-field="description"]').innerHTML = toDoItem['description'];
+          rowToUpdate.querySelector('td[data-field="priority"]').innerHTML = `<span class="badge text-bg-dark">${toDoItem['priority']}</span>`;
           break;
         default:
           // do nothing  
@@ -59,6 +59,7 @@
     const rowFields = rowItem.querySelectorAll("td[data-field]");
     let itemData = {};
     Array.from(rowFields).forEach(field => {
+      console.log('field is: ', field);
       itemData[field.dataset.field] = field.innerHTML;
     });
     itemData['id'] = rowItem.id;
@@ -130,11 +131,11 @@
           case "edit":
             console.log("Edit item");
             const itemData = getItemData(event.target);
-            console.log('itemData: ', itemData);
+            console.log('case EDIT itemData: ', itemData);
             // update modal with item data
             toDoListForm.querySelector('#title').value = itemData['title'];
             toDoListForm.querySelector('#description').innerHTML = itemData['description'];
-            toDoListForm.querySelector('#priority').value = itemData['priority'];
+            toDoListForm.querySelector('#priority').value = itemData['priority'].replace(/<[^>]*>/g, '').trim(); // Remove html tags [fix to <span> badge]
             toDoListModal.querySelector('#addItemModalLabel').innerHTML = 'Edit TO-DO Item';
             toDoListForm.querySelector('#modalAction').value = 'edit';
             toDoListForm.querySelector('#itemId').value = itemData['id'];
