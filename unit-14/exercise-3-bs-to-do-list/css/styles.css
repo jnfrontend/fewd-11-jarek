@@ -8,8 +8,8 @@ textarea {
   resize: vertical;
   font-size: 16px;
   letter-spacing: .4px;
-  background-color: #f4f4f4;
-  border: 2px solid transparent;
+  background-color: #f4f4f4 !important;
+  border: 2px solid transparent !important;
   font-family: "Helvetica Neue";
   display: inline-block;
 }
@@ -22,7 +22,9 @@ input[type="text"]:focus,
 select:focus,
 textarea:focus {
   background: #f8f8f8;
-  outline: 2px solid black;
+  border-color: transparent !important;
+  outline: 2px solid black !important;
+  box-shadow: none !important;
 }
 
 input::placeholder {
@@ -132,6 +134,7 @@ input[type="submit"]:hover {
 
 .component-simple-to-do-list__items tr td:not(:last-child) {
   border: none;
+  cursor: pointer;
   vertical-align: middle;
 }
 
