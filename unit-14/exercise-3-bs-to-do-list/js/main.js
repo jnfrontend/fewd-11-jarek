@@ -36,8 +36,8 @@
           let outputHtml = `<tr id="item${++itemId}" class="to-do-item">
             <td data-modal-action="edit" data-field="title">${toDoItem['title']}</td>
             <td data-modal-action="edit" data-field="description">${toDoItem['description']}</td>
-            <td data-modal-action="edit" data-field="priority">${toDoItem['priority']}</td>
-            <td><button class="btn btn-danger" type="button" data-modal-action="delete">Delete</button></td>
+            <td data-modal-action="edit" data-field="priority"><span class="badge text-bg-dark">${toDoItem['priority']}</span></td>
+            <td><button class="btn btn-danger w-100" type="button" data-modal-action="delete">Delete</button></td>
           </tr>`;
           itemsContainer.innerHTML += outputHtml;
           break;
@@ -77,19 +77,23 @@
   function init() {
     renderToDoListContainer();
     // modal event handler (open/show)
-    const phModalEl = document.getElementById('addItemModal');
-    phModalEl.addEventListener('show.bs.modal', event => {
+    const toDoModalEl = document.getElementById('addItemModal');
+    if(toDoModalEl) {
+      toDoModalEl.addEventListener('show.bs.modal', event => {
         console.log("addItemModal show has been clicked");
-
-        const action = event.relatedTarget.dataset.modalAction;
-        switch (action) {
-          case "add":
-            resetModalForm();
-            break;
-          default:
-            // do nothing  
+        // console.log('dataset', event.relatedTarget);
+        if (event.relatedTarget && event.relatedTarget.dataset && event.relatedTarget.dataset.modalAction) {
+          const action = event.relatedTarget.dataset.modalAction;
+          switch (action) {
+            case "add":
+              resetModalForm();
+              break;
+            default:
+              // do nothing  
+          }
         }
-    });
+      });
+    }
 
     // submit event handler
     toDoListForm.addEventListener("submit", (event) => {
@@ -103,19 +107,18 @@
       console.log('toDoListModalInstance: ', toDoListModalInstance);
 
       toDoListModalInstance.hide(); // hide the modal after the submit button has been clicked
-      //toDoListForm.reset(); // clear form after submission/add item
+      // toDoListForm.reset(); // clear form after submission/add item
     });
 
-    // reset event handler
-    // toDoListForm.addEventListener("reset", (event) => {
-    //   console.log("reset");
-    //   // resetModalForm();
-    // });
+    // reset button event handler
+    toDoListForm.addEventListener("reset", (event) => {
+      console.log("reset");
+      resetModalForm();
+    });
 
     // event handlers
     const toDoLists = toDoList.querySelector(".component-simple-to-do-list__items");
     // console.log(toDoLists);
-
     if (toDoLists) {
       toDoLists.addEventListener('click', (event) => {
         let action = event.target.dataset.modalAction;
