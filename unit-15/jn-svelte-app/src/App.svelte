@@ -1,10 +1,10 @@
 <script>
+	import { count } from "./store.js";
 	export let name;
 
-	let count = 10;
 	function increment() {
 		console.log("increment");
-		count += 1;
+		$count += 1; // "$" symbol to access global variable
 	}
 </script>
 
@@ -13,7 +13,7 @@
 		<h1><b>Unit-15</b><br>Svelte App</h1>
 	</header>
 	<h2>Hello {name}!</h2>
-	<p>Count: {count}</p>
+	<p>Count: {$count}</p>
 	<button on:click={increment}>Click to Increment</button>
 </main>
 <br>
