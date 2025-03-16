@@ -1,6 +1,5 @@
 <script>
     import { link } from "svelte-spa-router";
-
     let title = "Page Not Found"
 </script>
 

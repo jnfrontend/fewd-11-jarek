@@ -1,8 +1,8 @@
 <script>
     import { onMount } from "svelte";
-    import { link } from "svelte-spa-router";
+    import MainNavigation from "./components/MainNavigation.svelte";
 
-    let title = "Fetch API Posts";
+    let title = "Fetch API posts";
     let posts = [];
 
     // onMount() works simillar to addEventListener DOMContentLoaded
@@ -30,11 +30,7 @@
     <header>
 		<h1><b>Unit-15</b><br>Svelte App</h1>
         <h2>This is {title} page!</h2>
-        <nav>
-            <a href="/" use:link>Home</a>
-            <a href="/increment" use:link>Increment (Count Clicks)</a>
-            <a href="/posts" use:link>Fetch API Posts</a>
-        </nav>
+        <MainNavigation/>
 	</header>
     <!-- Use svelte template by using {# } -->
     <section class="fetch_container">
@@ -65,9 +61,6 @@
 		max-width: 650px;
 		margin: 0 auto;
 	}
-    nav a:not(:last-child) {
-        margin-right: 6px;
-    }
     footer {
 		width: 100%;
 		max-width: 100%;

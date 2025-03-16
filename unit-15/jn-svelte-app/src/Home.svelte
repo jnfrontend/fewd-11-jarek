@@ -1,21 +1,15 @@
 <script>
     let title = "Home";
-    import { link } from "svelte-spa-router";
+    import MainNavigation from "./components/MainNavigation.svelte";
 </script>
 
 <main>
     <header>
 		<h1><b>Unit-15</b><br>Svelte App</h1>
         <h2>Welcome to the {title} page!</h2>
-        <nav>
-            <a href="/" use:link>Home</a>
-            <a href="/increment" use:link>Increment (Count Clicks)</a>
-            <a href="/posts" use:link>Fetch API Posts</a>
-        </nav>
+        <!-- Use Main Navigation Component (./components/MainNavigation.svelte file) -->
+	    <MainNavigation />
 	</header>
-
-	<!-- Use fetch component (Fetch.svelte file) -->
-	<!-- <Fetch /> -->
     <br>
     <footer>
         <small>
@@ -33,9 +27,6 @@
 		max-width: 650px;
 		margin: 0 auto;
 	}
-    nav a:not(:last-child) {
-        margin-right: 6px;
-    }
 	footer {
 		width: 100%;
 		max-width: 100%;
