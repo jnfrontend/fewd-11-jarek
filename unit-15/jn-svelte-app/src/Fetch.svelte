@@ -1,6 +1,8 @@
 <script>
     import { onMount } from "svelte";
+    import { link } from "svelte-spa-router";
 
+    let title = "Fetch API Posts";
     let posts = [];
 
     // onMount() works simillar to addEventListener DOMContentLoaded
@@ -24,21 +26,62 @@
 </script>
 
 
- <!-- Use svelte template by using {# } -->
-<section class="fetch_container">
-    <h2>Fetch Posts</h2>
-    <p>API data: https://jsonplaceholder.typicode.com/posts</p>
-    <div class="fetch_data_posts">
-        {#each posts as post}
-            <article>
-                <h2>{post.title}</h2>
-                <p>{post.body}</p>
-            </article>
-        {/each}
-    </div>
-</section>
+<main>
+    <header>
+		<h1><b>Unit-15</b><br>Svelte App</h1>
+        <h2>This is {title} page!</h2>
+        <nav>
+            <a href="/" use:link>Home</a>
+            <a href="/increment" use:link>Increment (Count Clicks)</a>
+            <a href="/posts" use:link>Fetch API Posts</a>
+        </nav>
+	</header>
+    <!-- Use svelte template by using {# } -->
+    <section class="fetch_container">
+        <h2>Fetch Posts</h2>
+        <p>API Endpoint: https://jsonplaceholder.typicode.com/posts</p>
+        <div class="fetch_data_posts">
+            {#each posts as post}
+                <article>
+                    <h2>{post.title}</h2>
+                    <p>{post.body}</p>
+                </article>
+            {/each}
+        </div>
+    </section>
+</main>
+<br>
+<footer>
+    <small>
+        Copyright © 2025 JN, all rights reserved.
+    </small>
+</footer>
 
 <style>
+	main,
+	footer {
+		text-align: center;
+		padding: 1em;
+		max-width: 650px;
+		margin: 0 auto;
+	}
+    nav a:not(:last-child) {
+        margin-right: 6px;
+    }
+    footer {
+		width: 100%;
+		max-width: 100%;
+		border-top: 1px solid lightgray;
+	}
+    footer small {
+        opacity: .45;
+    }
+    h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
+	}
     section.fetch_container {
         max-width: 980px;
         margin: 60px auto 0 auto;
