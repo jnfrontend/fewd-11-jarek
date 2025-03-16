@@ -24,7 +24,7 @@
 |<p align="center">14.</p>|&#x2611; JavaScript - Advanced|<p align="center">Done</p>|<p align="center">[Unit-12](https://github.com/jnfrontend/fewd-11-jarek/pull/26)</p>|
 |<p align="center">15.</p>|&#x2611; Building a Web Application with JavaScript|<p align="center">Done</p>|<p align="center">[Unit-13](https://github.com/jnfrontend/fewd-11-jarek/pull/31)</p>|
 |<p align="center">16.</p>|&#x2611; Introduction to CSS Frameworks - Bootstrap|<p align="center">Done</p>|<p align="center">[Unit-14](https://github.com/jnfrontend/fewd-11-jarek/pull/36)</p>|
-|<p align="center">17.</p>|&#x2610; Other Frameworks, SEO, Web Security, Performance|<p align="center"></p>|<p align="center"></p>|
+|<p align="center">17.</p>|&#x2611; Other Frameworks, SEO, Web Security, Performance|<p align="center">Done</p>|<p align="center">[Unit-15](https://github.com/jnfrontend/fewd-11-jarek/pull/40)</p>|
 
 # Final Project ⏰
 |Week|Subject|Status|
@@ -39,8 +39,8 @@
 > **Assessment Due:** *Tuesday, 22nd April 2025, 11:59 PM*
 
 > [!NOTE]
-> **No Zoom session** <br> 
+> **No session** <br> 
 > - **Christmas Eve:**  *Tuesday, 24th December 2024* <br>
 > - **New Year's Eve:** *Tuesday, 31st December 2024*
 
-> © November 2024 JN, all rights reserved.
+> © November 2024 - 2025 JN, all rights reserved.
