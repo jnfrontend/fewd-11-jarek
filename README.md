@@ -29,11 +29,11 @@
 # Final Project ⏰
 |Week|Subject|Status|
 |---|---|---|
-|<p align="center">18.</p>|&#x2610; Walkthrough Project|<p align="center"></p>|
-|<p align="center">19.</p>|&#x2610; Review and Assessment Work 1 ⭐|<p align="center"></p>|
-|<p align="center">20.</p>|&#x2610; Review and Assessment Work 2 ⭐|<p align="center"></p>|
-|<p align="center">21.</p>|&#x2610; Review and Assessment Work 3 ⭐|<p align="center"></p>|
-|<p align="center">22.</p>|&#x2610; Assessment ⭐⭐⭐⭐⭐|<p align="center"></p>|
+|<p align="center">18.</p>|&#x2611; Walkthrough Project|<p align="center">Done</p>|
+|<p align="center">19.</p>|&#x2611; Review and Assessment Work 1 ⭐|<p align="center">Done</p>|
+|<p align="center">20.</p>|&#x2611; Review and Assessment Work 2 ⭐|<p align="center">Done</p>|
+|<p align="center">21.</p>|&#x2611; Review and Assessment Work 3 ⭐|<p align="center">Done</p>|
+|<p align="center">22.</p>|&#x2611; Assessment ⭐⭐⭐⭐⭐|<p align="center">Submitted !</p>|
 
 > [!IMPORTANT]
 > **Assessment Due:** *Tuesday, 22nd April 2025, 11:59 PM*
