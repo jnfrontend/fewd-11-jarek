@@ -1,0 +1,354 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video {
+  max-width: 100%;
+}
+
+html:before {
+  content: "";
+  top: 0;
+  height: 300px;
+  position: fixed;
+  width: 100%;
+  background-color: #235384;
+  z-index: -1;
+}
+
+html:after {
+  content: "";
+  bottom: 0;
+  height: 300px;
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  z-index: -1;
+}
+
+/* Fonts */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+  
+h1,
+.section_title,
+div#ranking_tables h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
+}
+
+/* Main */
+body {
+  position: relative;
+  background-color: white;
+  letter-spacing: 0.4px;
+  color: #212529;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  padding: 0 20px;
+  background-color: white;
+}
+
+h1,
+.section_title {
+  background: white;
+  font-size: 48px;
+  letter-spacing: 0.8px;
+  color: #212529;
+}
+div#ranking_tables h2 {
+  letter-spacing: 0.8px;
+}
+
+#super_heroes h1 {
+  padding-bottom: 50px;
+}
+
+/* Header and Navigation */
+nav {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+nav ul,
+nav ul li {
+  background-color: #235384 !important;
+}
+
+nav ul li:nth-child(2) {
+  border-right: 1px solid #567494;
+  border-left: 1px solid #567494;
+}
+
+nav.navbar ul li a.nav-link {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 15px 0;
+}
+
+nav ul li a:hover {
+  background-color: #006a98;
+}
+
+/* Main Banner */
+section#banner {
+  position: relative;
+  margin-top: 45px;
+  z-index: 1;
+  height: 550px;
+  background-image: url("../images/DC.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Super Heroes Cards */
+div#super_heroes.container .row .card {
+  box-shadow: 0px 6px 10px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  border-radius: 8px;
+  background-color: #f0f2f3;
+  transition: 0.25s ease-out 0.05s;
+  border: none;
+  padding: 0;
+  z-index: 0;
+}
+
+div#super_heroes.container .row .card:hover,
+div#super_heroes.container .row .card:focus {
+  background: linear-gradient(0deg, rgba(0, 116, 232, 1) 35%, rgba(240, 242, 243, 1) 100%);
+  box-shadow: 0 0 0 3px rgb(0, 116, 232), 0px 10px 50px 10px rgb(0, 116, 232, 0.1);
+  transform: translateY(-5px);
+  transition: 0.25s ease-in 0.15s;
+  cursor: pointer;
+}
+
+div#super_heroes.container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+div#super_heroes.container .row .card img {
+  filter: grayscale(0.2);
+  border-radius: 8px 8px 0 0;
+  -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
+  mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+  transition: all 0s ease 0.05s;
+}
+div#super_heroes.container .row .card:hover img {
+  animation: animate-hero 1.2s alternate ease-in-out infinite 0.42s;
+  transition: all 1.35s ease 0.15s;
+  -webkit-mask-position: -120%;
+  mask-position: -120%;
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+div#super_heroes.container .row .card .card-body h5.card-title {
+  transition: color .25s ease 0.1s;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: white;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  padding: 20px 30px;
+}
+
+div#super_heroes.container .row .card:hover h5.card-title{
+  color: rgb(0, 116, 232);
+}
+
+div#super_heroes.container .row .card .card-body {
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  display: block;
+  padding-bottom: 25px;
+  min-height: 110px;
+}
+
+div#super_heroes.container .row .card .card-body p.card-text{
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  line-height: 18px;
+  padding: 0 20px;
+  font-weight: 600;
+}
+
+/* Ranking Tables */
+div#ranking_tables {
+  padding: 50px 0 60px 0;
+}
+
+div#ranking_tables h2 {
+  margin-bottom: 10px;
+  padding: 12px;
+  color: #235384;
+  font-weight: 500;
+  font-size: 27.5px;
+}
+
+div#ranking_tables .table_wrapp {
+  padding: 15px 30px 30px 30px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+}
+
+div#ranking_tables table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #d9dfe2;
+  border-radius: 8px;
+  overflow: hidden;
+  border-top: none;
+  box-shadow: rgb(229 229 229) 0px 0px 20px 0px;
+}
+
+div#ranking_tables table tr {
+  background-color: white;
+}
+
+div#ranking_tables table thead tr th {
+  background-color: #235384;
+  font-weight: bold;
+  text-align: left;
+  padding: 18px 20px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13.5px;
+  letter-spacing: 0.8px;
+}
+
+div#ranking_tables table th,
+div#ranking_tables table td {
+  padding: 14px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f2f3;
+}
+
+div#ranking_tables table td {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+div#ranking_tables table tr:last-child td {
+  border-bottom: none;
+}
+
+/* (even/odd) */
+div#ranking_tables table tr:nth-of-type(even) {
+  background: #f9f9f9;
+}
+
+/* Footer */
+footer {
+  padding: 3% 20px;
+  text-align: center;
+  background-color: #000;
+  color: white;
+}
+
+footer h3 {
+  letter-spacing: -0.2px;
+}
+
+footer p {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  margin-top: 5px;
+}
+
+footer p span {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+footer small {
+  letter-spacing: 0.6px;
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+/* Other */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes animate-hero {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0.5em);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  div#ranking_tables {
+    padding: 50px 0 30px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  div#ranking_tables .table_wrapp {
+    background-color: unset;
+    padding: 0;
+  }
+  div#ranking_tables h2 {
+    background-color: #f3f3f3;
+    border: 1px solid #d9dfe2;
+    border-radius: 8px 8px 0 0;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 0;
+  }
+  div#ranking_tables table {
+    border-radius: 0 0 8px 8px;
+  }
+  #super_heroes h1,
+  .section_title  {
+    text-align: center;
+  }
+  footer {
+    padding: 5% 20px;
+  }
+}
+
+@media (max-width: 480px) { 
+  #super_heroes h1,
+  .section_title  {
+    font-size: 42px;
+  }
+}
